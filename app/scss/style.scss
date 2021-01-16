@@ -1,0 +1,75 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'global';
+
+.header {
+  padding: 50px 0;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+  }
+
+  &__item+&__item {
+    margin-left: 30px;
+  }
+
+  &__link {
+    @include rubik-500;
+    color: #436372;
+    font-size: 15px;
+    line-height: 0.8;
+  }
+}
+
+.user-content {
+  flex-basis: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @extend %bg-img;
+  background-image: url('../images/icons/user-bg.png');
+
+  &__icon--num {
+    position: relative;
+  }
+
+  &__number {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: -10px;
+    left: 12px;
+    text-align: center;
+    font-size: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 5;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import 'media';

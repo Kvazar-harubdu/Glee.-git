@@ -1,0 +1,38 @@
+$accent: #243f4d;
+$title-h2: #191919;
+$btn-color: #a3bbc8;
+
+%bg-img {
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@mixin dmsans-400 {
+  font-family: 'DMSans-Regular', sans-serif;
+  font-weight: 400;
+}
+
+@mixin dmsans-500 {
+  font-family: 'DMSans-Medium', sans-serif;
+  font-weight: 400;
+}
+
+@mixin dmsans-700 {
+  font-family: 'DMSans-Bold', sans-serif;
+  font-weight: 400;
+}
+
+@mixin popins-700 {
+  font-family: 'Poppins-Bold', sans-serif;
+  font-weight: 700;
+}
+
+@mixin rubik-400 {
+  font-family: 'Rubik-Regular', sans-serif;
+  font-weight: 400;
+}
+
+@mixin rubik-500 {
+  font-family: 'Rubik-Regular', sans-serif;
+  font-weight: 500;
+}
