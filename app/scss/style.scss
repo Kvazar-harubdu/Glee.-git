@@ -58,56 +58,51 @@
 
 .furniture {
 
-  &__slider {}
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 1200px;
+    min-height: 820px;
+  }
 
   &__item {
+    display: flex;
     @extend %bg-img;
     background-size: cover;
   }
 
   &__title {
+    @include rubik-500;
     margin-bottom: 35px;
     font-size: 72px;
     line-height: 1;
     text-transform: uppercase;
   }
 
+  &__descr {
+    max-width: 420px;
+  }
+
   &__text {
+    @include rubik-400;
     margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #436372;
   }
 
   &__btn {
-    display: block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     max-width: 200px;
     height: 60px;
     font-size: 15px;
     background-color: $btn-color;
     color: #fff;
-
-    &::after {
-      content: "";
-      position: absolute;
-      background-image: url('../images/icons/arrows-btn.svg');
-    }
   }
 }
-
-
-
-.slider__item {}
-
-.slider__descr {}
-
-.slider__title {}
-
-.slider__text {}
-
-.slider__btn {}
-
-.slider__images {}
-
-
-
 
 .support {
   display: flex;
@@ -314,6 +309,7 @@
   &__section+&__section {
     padding-left: 15px;
   }
+
   &__section {
     &:not(:last-child) {
       border-right: 1px solid $footer-color;
