@@ -1,10 +1,24 @@
 $accent: #243f4d;
 $title-h2: #191919;
 $btn-color: #a3bbc8;
+$footer-color: #7b7b7b;
 
 %bg-img {
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+%before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+@mixin btn {
+  display: block;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 @mixin dmsans-400 {
@@ -14,12 +28,12 @@ $btn-color: #a3bbc8;
 
 @mixin dmsans-500 {
   font-family: 'DMSans-Medium', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 @mixin dmsans-700 {
   font-family: 'DMSans-Bold', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 @mixin popins-700 {

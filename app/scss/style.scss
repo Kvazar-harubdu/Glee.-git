@@ -56,16 +56,275 @@
   }
 }
 
+.furniture {
+
+  &__slider {}
+
+  &__item {
+    @extend %bg-img;
+    background-size: cover;
+  }
+
+  &__title {
+    margin-bottom: 35px;
+    font-size: 72px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+  }
+
+  &__btn {
+    display: block;
+    max-width: 200px;
+    height: 60px;
+    font-size: 15px;
+    background-color: $btn-color;
+    color: #fff;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url('../images/icons/arrows-btn.svg');
+    }
+  }
+}
+
+
+
+.slider__item {}
+
+.slider__descr {}
+
+.slider__title {}
+
+.slider__text {}
+
+.slider__btn {}
+
+.slider__images {}
+
+
+
+
+.support {
+  display: flex;
+  justify-content: space-around;
+  padding: 45px 0;
+  background-color: #fef7f0;
+
+  &__item {
+    position: relative;
+    max-width: 203px;
+
+    &::before {
+      @extend %before;
+      width: 55px;
+      height: 55px;
+      left: -75px;
+      top: 10px;
+    }
+  }
+
+  &__item--time {
+    &::before {
+      background-image: url('../images/twenty-four.png');
+    }
+  }
+
+  &__item--truck {
+    &::before {
+      background-image: url('../images/delivery-truck.png');
+    }
+  }
+
+  &__item--card {
+    &::before {
+      background-image: url('../images/credit-card.png');
+    }
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    color: #414141;
+  }
+
+  &__text {
+    font-weight: 400;
+  }
+}
+
+.gallery {
+  &__inner {
+    background-color: #fafafa;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &__filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+  }
+
+  &__btn {
+    @include btn;
+  }
+
+  &__btn+&__btn {
+    margin-left: 30px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 270px;
+    min-height: 380px;
+    margin-bottom: 40px;
+    background-color: #fff;
+    text-align: center;
+  }
+
+  &__img {
+    margin: auto 0;
+    object-fit: contain;
+  }
+
+  &__info {
+    padding-bottom: 38px;
+  }
+}
+
+
+.gallery__title {}
+
+
+.gallery__filter {}
+
+.gallety__btn {}
+
+.gallery__inner {}
+
+.gallery__items {}
+
+.gallery__img {}
+
+.gallery__caption {}
+
+.gallery__price {}
 
 
 
 
 
+.footer {
+  @include rubik-400;
+  margin-bottom: 40px;
+  font-size: 14px;
+  line-height: 2.3;
+  color: $footer-color;
 
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    padding-bottom: 75px;
+    border-bottom: 1px solid #a3bbc8;
+  }
 
+  &__caption {
+    display: block;
+    color: #1f2044;
+    text-transform: uppercase;
+    @include dmsans-700;
+    margin-bottom: 30px;
+  }
 
+  &__text {
+    max-width: 240px;
+    margin-bottom: 38px;
+    line-height: 1.7;
+  }
+}
 
+.address {
+  max-width: 195px;
+  font-style: normal;
 
+  &__logo {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    & span {
+      text-transform: uppercase;
+    }
+  }
+
+  &__link--text {
+    display: block;
+    line-height: 1.7;
+  }
+}
+
+.form {
+  display: flex;
+  @include dmsans-400;
+
+  &__email {
+    max-width: 170px;
+    padding: 0 10px;
+    background-color: #fef7f0;
+    border: none;
+
+    &::placeholder {
+      font-size: 12px;
+      color: #1f2044;
+    }
+  }
+
+  &__btn {
+    width: 100px;
+    height: 38px;
+    @include btn;
+    color: #fff;
+    background-color: $btn-color;
+  }
+}
+
+.copy {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 1;
+
+  &__section+&__section {
+    padding-left: 15px;
+  }
+  &__section {
+    &:not(:last-child) {
+      border-right: 1px solid $footer-color;
+      padding-right: 15px;
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+}
 
 
 
