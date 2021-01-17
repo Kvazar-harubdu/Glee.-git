@@ -57,6 +57,35 @@
 }
 
 .furniture {
+  &__slider {}
+
+  &__slider .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    position: absolute;
+    right: 50%;
+    bottom: 45px;
+    transform: translateX(50%);
+  }
+
+  &__slider li+li {
+    margin-left: 12px;
+  }
+
+  &__slider button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: #fde3cc;
+    outline-color: $btn-color;
+  }
+
+  &__slider .slick-active button {
+    background-color: #fff;
+  }
 
   &__inner {
     display: flex;

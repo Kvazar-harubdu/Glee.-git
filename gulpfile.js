@@ -1,14 +1,23 @@
-const {src, dest, watch, parallel, series} = require('gulp');
-const scss         = require('gulp-sass');
-const concat       = require('gulp-concat');
+const {
+  src,
+  dest,
+  watch,
+  parallel,
+  series
+} = require('gulp');
+const scss = require('gulp-sass');
+const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
-const uglify       = require('gulp-uglify');
-const browserSync  = require('browser-sync').create();
-const imagemin     = require('gulp-imagemin');
-const del          = require('del');
+const uglify = require('gulp-uglify');
+const browserSync = require('browser-sync').create();
+const imagemin = require('gulp-imagemin');
+const del = require('del');
 
 function styles() {
-  return src('app/scss/style.scss')
+  return src([
+      'app/scss/style.scss',
+      'node_modules/slick-carousel/slick/slick.scss'
+    ])
     .pipe(scss({
       outputStyle: 'compressed'
     }))
@@ -24,6 +33,7 @@ function styles() {
 function scripts() {
   return src([
       'node_modules/jquery/dist/jquery.js',
+      'node_modules/slick-carousel/slick/slick.js',
       'app/js/main.js'
     ])
     .pipe(concat('main.min.js'))
@@ -43,25 +53,38 @@ function browsersync() {
 function images() {
   return src('app/images/**/*.*')
     .pipe(imagemin([
-      imagemin.gifsicle({interlaced: true}),
-      imagemin.mozjpeg({quality: 75, progressive: true}),
-      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.gifsicle({
+        interlaced: true
+      }),
+      imagemin.mozjpeg({
+        quality: 75,
+        progressive: true
+      }),
+      imagemin.optipng({
+        optimizationLevel: 5
+      }),
       imagemin.svgo({
-        plugins: [
-            {removeViewBox: true},
-            {cleanupIDs: false}]
-        })
+        plugins: [{
+            removeViewBox: true
+          },
+          {
+            cleanupIDs: false
+          }
+        ]
+      })
     ]))
     .pipe(dest('dist/images'))
 }
 
 function build() {
   return src([
-    'app/**/*.html',
-    'app/css/style.min.css',
-    'app/js/main.min.js'
-  ], {base: 'app'})
-  .pipe(dest('dist'))
+      'app/**/*.html',
+      'app/css/style.min.css',
+      'app/js/main.min.js'
+    ], {
+      base: 'app'
+    })
+    .pipe(dest('dist'))
 }
 
 function cleanDist() {
