@@ -1,8 +1,20 @@
+html,
 body {
+  height: 100%;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
   @include dmsans-500;
   font-size: 16px;
   color: $accent;
   line-height: 1.8;
+}
+
+.main {
+  flex-grow: 1;
 }
 
 .container {

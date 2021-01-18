@@ -27,6 +27,11 @@
     color: #436372;
     font-size: 15px;
     line-height: 0.8;
+    transition: color 1.5s ease-in;
+
+    &:hover {
+      color: $btn-color;
+    }
   }
 }
 
@@ -129,6 +134,11 @@
     font-size: 15px;
     background-color: $btn-color;
     color: #fff;
+    transition: all 1.5s ease-in;
+
+    &:hover {
+      @include btn-hover;
+    }
   }
 }
 
@@ -197,6 +207,15 @@
 
   &__btn {
     @include btn;
+    @include dmsans-700;
+    color: $btn-color;
+    outline-color: $btn-color;
+    transition: all 1s;
+
+    &:hover {
+      color: $title-h2;
+      outline-color: $title-h2;
+    }
   }
 
   &__btn+&__btn {
@@ -210,6 +229,7 @@
   }
 
   &__items {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -223,6 +243,12 @@
   &__img {
     margin: auto 0;
     object-fit: contain;
+    cursor: pointer;
+
+
+    &:hover~.gallery-icon {
+      display: flex;
+    }
   }
 
   &__info {
@@ -230,41 +256,61 @@
   }
 }
 
+.gallery-icon {
+  display: none;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
 
-.gallery__title {}
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+  }
 
+  &__item+&__item {
+    margin-left: 16px;
+  }
 
-.gallery__filter {}
+  &__btn {
+    @include btn;
+  }
 
-.gallety__btn {}
-
-.gallery__inner {}
-
-.gallery__items {}
-
-.gallery__img {}
-
-.gallery__caption {}
-
-.gallery__price {}
-
-
-
+  &__item--fill {
+    background-color: $btn-color;
+  }
+}
 
 
 .footer {
   @include rubik-400;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
   font-size: 14px;
-  line-height: 2.3;
   color: $footer-color;
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
     margin-bottom: 35px;
-    padding-bottom: 75px;
+    padding-bottom: 65px;
     border-bottom: 1px solid #a3bbc8;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+  }
+
+  &__link {
+
+    &:hover {
+      color: $accent;
+    }
   }
 
   &__caption {
@@ -278,7 +324,6 @@
   &__text {
     max-width: 240px;
     margin-bottom: 38px;
-    line-height: 1.7;
   }
 }
 
@@ -292,18 +337,20 @@
   }
 
   &__link {
+    margin-bottom: 10px;
+    display: block;
+
+    &:hover {
+      color: $accent;
+    }
+
     & span {
       text-transform: uppercase;
     }
   }
-
-  &__link--text {
-    display: block;
-    line-height: 1.7;
-  }
 }
 
-.form {
+.footer-form {
   display: flex;
   @include dmsans-400;
 
@@ -325,6 +372,11 @@
     @include btn;
     color: #fff;
     background-color: $btn-color;
+    transition: all 1.5s ease-in;
+
+    &:hover {
+      @include btn-hover;
+    }
   }
 }
 

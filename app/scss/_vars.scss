@@ -21,6 +21,12 @@ $footer-color: #7b7b7b;
   cursor: pointer;
 }
 
+@mixin btn-hover {
+  background-color: transparent;
+  border: 1px solid $accent;
+  color: $accent;
+}
+
 @mixin dmsans-400 {
   font-family: 'DMSans-Regular', sans-serif;
   font-weight: 400;
