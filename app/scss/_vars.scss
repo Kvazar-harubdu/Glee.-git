@@ -2,6 +2,8 @@ $accent: #243f4d;
 $title-h2: #191919;
 $btn-color: #a3bbc8;
 $footer-color: #7b7b7b;
+$fonts: #fcd7b6;
+$line: #e8e4df;
 
 %bg-img {
   background-repeat: no-repeat;
@@ -55,4 +57,9 @@ $footer-color: #7b7b7b;
 @mixin rubik-500 {
   font-family: 'Rubik-Regular', sans-serif;
   font-weight: 500;
+}
+
+@mixin rubik-700 {
+  font-family: 'Rubik-Regular', sans-serif;
+  font-weight: 700;
 }

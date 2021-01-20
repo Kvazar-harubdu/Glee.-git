@@ -1,10 +1,10 @@
-@import 'vars';
 @import 'fonts';
+@import 'vars';
 @import 'reset';
 @import 'global';
 
 .header {
-  padding: 50px 0;
+  padding: 48px 0;
 
   &__wrapper {
     display: flex;
@@ -14,19 +14,20 @@
 }
 
 .menu {
+  padding-left: 135px;
+
   &__list {
     display: flex;
-  }
 
-  &__item+&__item {
-    margin-left: 30px;
+    & :not(:last-child) {
+      margin-right: 33px;
+    }
   }
 
   &__link {
     @include rubik-500;
     color: #436372;
     font-size: 15px;
-    line-height: 0.8;
     transition: color 1.5s ease-in;
 
     &:hover {
@@ -35,24 +36,55 @@
   }
 }
 
-.user-content {
+.user-menu {
   flex-basis: 320px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   @extend %bg-img;
-  background-image: url('../images/icons/user-bg.png');
 
-  &__icon--num {
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon--circle {
     position: relative;
+    width: 88px;
+    height: 51px;
+    background-color: $fonts;
+
+    &-left {
+      margin-left: 21px;
+      border-top-left-radius: 38%;
+      border-bottom-left-radius: 38%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 32px;
+        right: 0;
+        top: 10px;
+        background-color: #fff;
+      }
+    }
+
+    &-right {
+      margin-right: 18px;
+      border-top-right-radius: 38%;
+      border-bottom-right-radius: 38%;
+    }
   }
 
   &__number {
     position: absolute;
     width: 16px;
     height: 16px;
-    top: -10px;
-    left: 12px;
+    top: 8px;
+    left: 53%;
+
     text-align: center;
     font-size: 10px;
     background-color: #fff;
@@ -61,9 +93,10 @@
   }
 }
 
+
 .furniture {
 
-  &__slider .slick-dots {
+  .slick-dots {
     display: flex;
     justify-content: center;
     margin: 0 auto;
@@ -71,50 +104,53 @@
     right: 50%;
     bottom: 45px;
     transform: translateX(50%);
-  }
 
-  &__slider li+li {
-    margin-left: 12px;
+    & :not(:last-child) {
+      margin-right: 12px;
+    }
   }
 
   &__slider button {
     width: 30px;
     height: 30px;
     padding: 0;
+    font-size: 11px;
     border: none;
     border-radius: 50%;
     background-color: #fde3cc;
     outline-color: $btn-color;
   }
 
-  &__slider .slick-active button {
+  .slick-active button {
     background-color: #fff;
   }
 
   &__inner {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-basis: 1200px;
     min-height: 820px;
   }
 
   &__item {
-    display: flex;
     @extend %bg-img;
-    background-size: cover;
   }
 
   &__title {
-    @include rubik-500;
-    margin-bottom: 35px;
+    @include rubik-700;
+    padding-top: 220px;
+    margin-bottom: 20px;
     font-size: 72px;
     line-height: 1;
     text-transform: uppercase;
   }
 
   &__descr {
-    max-width: 420px;
+    max-width: 450px;
+  }
+
+  &__images {
+    object-fit: contain;
   }
 
   &__text {
@@ -145,20 +181,37 @@
 .support {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 70px;
-  padding: 45px 0;
+  align-items: center;
+  min-height: 170px;
+  margin-bottom: 55px;
   background-color: #fef7f0;
 
+
   &__item {
+    display: inline-block;
     position: relative;
-    max-width: 203px;
+    max-width: 250px;
+    padding-left: 55px;
+
 
     &::before {
       @extend %before;
       width: 55px;
       height: 55px;
-      left: -75px;
+      left: -30px;
       top: 10px;
+    }
+
+    &:not(:last-child) {
+
+      &::after {
+        @extend %before;
+        width: 1px;
+        height: 170px;
+        top: -40px;
+        right: -60%;
+        background-color: $line;
+      }
     }
   }
 
@@ -181,11 +234,15 @@
   }
 
   &__title {
-    margin-bottom: 5px;
+    @include dmsans-700;
+    display: block;
+    font-size: 18px;
+    // margin-bottom: 5px;
     color: #414141;
   }
 
   &__text {
+    display: block;
     font-weight: 400;
   }
 }
@@ -196,7 +253,7 @@
   }
 
   &__title {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     text-align: center;
   }
 
@@ -204,6 +261,10 @@
     display: flex;
     justify-content: center;
     margin-bottom: 80px;
+
+    & :not(:last-child) {
+      margin-right: 19px;
+    }
   }
 
   &__btn {
@@ -217,10 +278,6 @@
       color: $title-h2;
       outline-color: $title-h2;
     }
-  }
-
-  &__btn+&__btn {
-    margin-left: 30px;
   }
 
   &__inner {
@@ -238,6 +295,7 @@
     min-height: 380px;
     margin-bottom: 40px;
     background-color: #fff;
+    box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
     text-align: center;
   }
 
@@ -291,9 +349,28 @@
 
 .footer {
   @include rubik-400;
-  padding-bottom: 40px;
+  padding: 100px 0 40px;
   font-size: 14px;
   color: $footer-color;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 15px;
+  }
+
+  &__logo {
+    flex-basis: 200px;
+  }
+
+  &__caption {
+    flex-basis: 200px;
+    display: block;
+    color: #1f2044;
+    text-transform: uppercase;
+    @include dmsans-700;
+  }
 
   &__wrapper {
     display: flex;
@@ -304,7 +381,7 @@
   }
 
   &__item {
-    margin-bottom: 10px;
+    margin-bottom: 7px;
   }
 
   &__link {
@@ -314,31 +391,27 @@
     }
   }
 
-  &__caption {
-    display: block;
-    color: #1f2044;
-    text-transform: uppercase;
-    @include dmsans-700;
-    margin-bottom: 30px;
+  &__list {
+    flex-basis: 200px;
+  }
+
+  &__inner,
+  &__caption--form {
+    flex-basis: 270px;
   }
 
   &__text {
     max-width: 240px;
-    margin-bottom: 38px;
+    margin-bottom: 33px;
   }
 }
 
 .address {
-  max-width: 195px;
+  max-width: 200px;
   font-style: normal;
 
-  &__logo {
-    display: block;
-    margin-bottom: 30px;
-  }
-
   &__link {
-    margin-bottom: 10px;
+    margin-bottom: 7px;
     display: block;
 
     &:hover {
@@ -351,7 +424,7 @@
   }
 }
 
-.footer-form {
+.email-form {
   display: flex;
   @include dmsans-400;
 
@@ -381,17 +454,15 @@
   }
 }
 
-.copy {
+.footer-copy {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
   line-height: 1;
 
-  &__section+&__section {
-    padding-left: 15px;
-  }
-
   &__section {
+    padding-left: 16px;
+
     &:not(:last-child) {
       border-right: 1px solid $footer-color;
       padding-right: 15px;
@@ -402,10 +473,3 @@
     display: flex;
   }
 }
-
-
-
-
-
-
-@import 'media';

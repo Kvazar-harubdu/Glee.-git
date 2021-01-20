@@ -9,8 +9,9 @@ body {
   flex-direction: column;
   @include dmsans-500;
   font-size: 16px;
-  color: $accent;
   line-height: 1.8;
+  background-color: #fff;
+  color: $accent;
 }
 
 .main {
@@ -18,19 +19,35 @@ body {
 }
 
 .container {
-  max-width: 1750px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-.small-container {
-  max-width: 1200px;
+  max-width: 1800px;
   margin: 0 auto;
   padding: 0 15px;
+
+  &--small {
+    max-width: 1200px;
+  }
 }
+
+// .small-container {
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   padding: 0 15px;
+// }
 
 .title {
   color: $title-h2;
   font-size: 36px;
   @include dmsans-700;
+}
+
+.speak {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
