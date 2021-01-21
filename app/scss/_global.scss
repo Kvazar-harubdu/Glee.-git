@@ -34,6 +34,15 @@ body {
   @include dmsans-700;
 }
 
+.button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  font-size: 15px;
+  transition: $trans;
+}
+
 .speak {
   position: absolute;
   width: 1px;

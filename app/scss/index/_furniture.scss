@@ -81,15 +81,9 @@
   }
 
   &__btn {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     max-width: 200px;
-    height: 60px;
-    font-size: 15px;
     background-color: $default;
     color: #fff;
-    transition: $trans;
 
     &:hover {
       @include btn-hover;
