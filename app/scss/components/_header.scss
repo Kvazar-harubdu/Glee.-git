@@ -1,0 +1,129 @@
+.header {
+  padding: 48px 0;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.menu {
+  padding-left: 180px;
+
+  &__list {
+    display: flex;
+
+    & :not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  &__link {
+    @include rubik-500;
+    position: relative;
+    color: #436372;
+    font-size: 15px;
+    transition: color 1.5s ease-in;
+    padding: 6px;
+
+    &::before {
+      @extend %menu-before;
+      border-top: 1px solid $accent;
+      border-bottom: 1px solid $accent;
+      transform: scaleY(2);
+    }
+
+    &::after {
+      @extend %menu-before;
+      background-color: $accent;
+      transform: scaleY(0);
+      transition: 0.5s;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      @extend %menu-hover;
+    }
+
+    &:focus {
+      @include focus;
+    }
+  }
+}
+
+.user-menu {
+  flex-basis: 320px;
+  display: flex;
+  align-items: center;
+  @extend %bg-img;
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid transparent;
+    transition: $trans;
+
+    &:hover {
+      opacity: 0.7;
+      background-color: $fonts;
+      border-radius: 50%;
+    }
+
+    &:active {
+      @include active;
+    }
+  }
+
+  &__icon--circle {
+    position: relative;
+    width: 88px;
+    height: 51px;
+    background-color: $fonts;
+    transition: $trans;
+
+    &-left {
+      margin-left: 21px;
+      border-top-left-radius: 38%;
+      border-bottom-left-radius: 38%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 32px;
+        right: 0;
+        top: 10px;
+        background-color: #fff;
+
+        &:hover {
+          display: none;
+        }
+      }
+    }
+
+    &-right {
+      margin-right: 18px;
+      border-top-right-radius: 38%;
+      border-bottom-right-radius: 38%;
+    }
+  }
+
+  &__number {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 8px;
+    left: 53%;
+    text-align: center;
+    font-size: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 5;
+  }
+}

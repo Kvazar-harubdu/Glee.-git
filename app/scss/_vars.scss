@@ -1,9 +1,12 @@
 $accent: #243f4d;
-$title-h2: #191919;
-$btn-color: #a3bbc8;
-$footer-color: #7b7b7b;
+$title: #191919;
+$default: #a3bbc8;
+$link: #7b7b7b;
 $fonts: #fcd7b6;
 $line: #e8e4df;
+$trans: all 0.5s ease-in;
+$shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
+1px 1px 5px rgba(255, 255, 255, 1);
 
 %bg-img {
   background-repeat: no-repeat;
@@ -16,6 +19,33 @@ $line: #e8e4df;
   background-repeat: no-repeat;
 }
 
+%menu-before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: $trans;
+}
+
+%menu-hover {
+  opacity: 1;
+  transform: scaleY(1);
+  z-index: -1;
+}
+
+@mixin active {
+  border: 2px solid $accent;
+  border-radius: 50%;
+}
+
+@mixin focus {
+  color: $default;
+  border: 2px solid $default;
+}
+
 @mixin btn {
   display: block;
   border: none;
@@ -25,8 +55,8 @@ $line: #e8e4df;
 
 @mixin btn-hover {
   background-color: transparent;
-  border: 1px solid $accent;
-  color: $accent;
+  color: $title;
+  border: 1px solid $title;
 }
 
 @mixin dmsans-400 {

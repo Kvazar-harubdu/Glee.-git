@@ -1,0 +1,122 @@
+.gallery {
+
+  &__title {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  &__filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+
+    & :not(:last-child) {
+      margin-right: 19px;
+    }
+  }
+
+  &__btn {
+    @include btn;
+    @include dmsans-700;
+    color: $default;
+    outline-color: transparent;
+    transition: $trans;
+
+    &:hover {
+      transform: translateY(10px);
+      box-shadow: $shadow;
+    }
+
+    &:focus {
+      @include focus;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__items {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 270px;
+    min-height: 380px;
+    margin-bottom: 40px;
+    background-color: #fff;
+    box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+    text-align: center;
+
+    &:hover .gallery-icon {
+      display: flex;
+    }
+  }
+
+  &__img {
+    margin: auto 0;
+    object-fit: contain;
+    cursor: pointer;
+  }
+
+  &__info {
+    padding-bottom: 38px;
+  }
+
+  &__caption {
+    font-size: 16px;
+  }
+
+  &__price {
+    @include dmsans-700;
+    color: $default;
+  }
+}
+
+.gallery-icon {
+  display: none;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: $trans;
+
+    &:hover {
+      box-shadow: $shadow;
+    }
+
+    &:active {
+      @include active;
+      outline-color: transparent;
+    }
+  }
+
+  & :not(:last-child) {
+    margin-right: 16px;
+  }
+
+  &__btn {
+    @include btn;
+    transition: $trans;
+
+    &:hover path {
+      fill: $title;
+    }
+  }
+
+  &__item--fill {
+    background-color: $default;
+  }
+}
