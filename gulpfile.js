@@ -16,8 +16,7 @@ const del = require('del');
 function styles() {
   return src([
       'app/scss/style.scss',
-      'node_modules/slick-carousel/slick/slick.scss',
-      'node_modules/fancybox/dist/scss/jquery.fancybox.scss'
+      'node_modules/slick-carousel/slick/slick.scss' 
     ])
     .pipe(scss({
       outputStyle: 'compressed'
@@ -35,7 +34,7 @@ function scripts() {
   return src([
       'node_modules/jquery/dist/jquery.js',
       'node_modules/slick-carousel/slick/slick.js',
-      'node_modules/fancybox/dist/js/jquery.fancybox.js',
+      'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
       'node_modules/mixitup/dist/mixitup.js',
       'app/js/main.js'
     ])

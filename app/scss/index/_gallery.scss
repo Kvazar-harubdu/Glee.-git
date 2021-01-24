@@ -5,55 +5,50 @@
     text-align: center;
   }
 
-  &__filter {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 80px;
-
-    & :not(:last-child) {
-      margin-right: 19px;
-    }
-  }
-
-  &__btn {
-    @include btn;
-    @include dmsans-700;
-    color: $default;
-    outline-color: transparent;
-    transition: $trans;
-
-    &:hover {
-      transform: translateY(10px);
-      box-shadow: $shadow;
-    }
-
-    &:focus {
-      @include focus;
-    }
-  }
-
   &__inner {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
+}
 
-  &__items {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-basis: 270px;
-    min-height: 380px;
-    margin-bottom: 40px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
-    text-align: center;
+.filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
 
-    &:hover .gallery-icon {
-      display: flex;
+  &__item:not(:last-child) {
+    margin-right: 19px;
+  }
+
+  &__btn {
+    @include filter-btn;
+
+    &:hover {
+      @include filter-hover;
     }
+
+    &:focus {
+      color: $default;
+    }
+  }
+}
+
+.card-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 270px;
+  min-height: 380px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+  text-align: center;
+
+  &:hover .gallery-icon {
+    display: flex;
   }
 
   &__img {
@@ -81,43 +76,40 @@
   justify-content: center;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 46%;
   transform: translateX(-50%);
 
-  &__item {
+  &__item:not(:last-child) {
+    margin-right: 16px;
+  }
+
+  &__btn {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    background-color: #fff;
+    align-items: center;
+    background-color: #ffff;
     width: 45px;
     height: 45px;
     border-radius: 50%;
+    border: none;
+    color: inherit;
+    outline: transparent;
     transition: $trans;
+
+    &--fill {
+      background-color: $default;
+    }
+
+    &:hover path {
+      fill: $nero;
+    }
 
     &:hover {
       box-shadow: $shadow;
     }
 
-    &:active {
-      @include active;
-      outline-color: transparent;
+    &:focus {
+      @include focus-icon;
     }
-  }
-
-  & :not(:last-child) {
-    margin-right: 16px;
-  }
-
-  &__btn {
-    @include btn;
-    transition: $trans;
-
-    &:hover path {
-      fill: $title;
-    }
-  }
-
-  &__item--fill {
-    background-color: $default;
   }
 }

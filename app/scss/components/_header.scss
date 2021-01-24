@@ -1,5 +1,5 @@
 .header {
-  padding: 48px 0;
+  padding: 45px 0;
 
   &__wrapper {
     display: flex;
@@ -13,19 +13,19 @@
 
   &__list {
     display: flex;
+  }
 
-    & :not(:last-child) {
-      margin-right: 30px;
-    }
+  &__item:not(:last-child) {
+    margin-right: 25px;
   }
 
   &__link {
     @include rubik-500;
+    @include border;
     position: relative;
-    color: #436372;
-    font-size: 15px;
-    transition: color 1.5s ease-in;
     padding: 6px;
+    color: $dark-blue;
+    font-size: 15px;
 
     &::before {
       @extend %menu-before;
@@ -51,7 +51,7 @@
     }
 
     &:focus {
-      @include focus;
+      @include focus-text;
     }
   }
 }
@@ -66,51 +66,79 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid transparent;
-    transition: $trans;
+    @include border;
 
-    &:hover {
-      opacity: 0.7;
-      background-color: $fonts;
-      border-radius: 50%;
+    &--search {
+      background-image: url('../images/icons/search.svg');
+      width: 51px;
+      height: 51px;
     }
 
-    &:active {
-      @include active;
+    &--circle {
+      position: relative;
+      width: 88px;
+      height: 51px;
+      background-color: $light-brown;
+      transition: $trans;
     }
-  }
 
-  &__icon--circle {
-    position: relative;
-    width: 88px;
-    height: 51px;
-    background-color: $fonts;
-    transition: $trans;
-
-    &-left {
-      margin-left: 21px;
+    &--circle-left {
+      margin-left: 20px;
       border-top-left-radius: 38%;
       border-bottom-left-radius: 38%;
+
+      &::after {
+        @extend %before;
+        width: 19px;
+        height: 17px;
+        background-image: url('../images/icons/heart.svg');
+      }
 
       &::before {
         content: "";
         position: absolute;
         width: 1px;
         height: 32px;
-        right: 0;
+        right: -5px;
         top: 10px;
         background-color: #fff;
-
-        &:hover {
-          display: none;
-        }
+        z-index: 7;
       }
     }
 
-    &-right {
-      margin-right: 18px;
+    &--circle-right {
+      margin-right: 22px;
       border-top-right-radius: 38%;
       border-bottom-right-radius: 38%;
+
+      &::after {
+        @extend %before;
+        width: 19px;
+        height: 17px;
+        background-image: url('../images/icons/cart.svg');
+      }
+    }
+
+    &--btn {
+      @extend %bg-img;
+      width: 51px;
+      height: 52px;
+      background-image: url('../images/icons/user-btn.svg');
+    }
+
+    &:hover {
+      opacity: 0.7;
+      background-color: $light-brown;
+      border-radius: 50%;
+      fill: $dark-blue;
+    }
+
+    &:focus {
+      @include focus-icon;
+    }
+
+    &:active {
+      @include active;
     }
   }
 

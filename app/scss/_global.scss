@@ -29,17 +29,19 @@ body {
 }
 
 .title {
-  color: $title;
+  color: $nero;
   font-size: 36px;
   @include dmsans-700;
 }
 
 .button {
+  @include btn;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 60px;
   font-size: 15px;
+  background-color: transparent;
   transition: $trans;
 }
 

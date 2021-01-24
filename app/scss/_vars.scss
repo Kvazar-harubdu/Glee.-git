@@ -1,9 +1,17 @@
 $accent: #243f4d;
-$title: #191919;
 $default: #a3bbc8;
-$link: #7b7b7b;
-$fonts: #fcd7b6;
-$line: #e8e4df;
+$nero: #191919;
+$light-brown: #fcd7b6;
+$pampas: #e8e4df;
+$gray: #8d8d8d;
+$dark-gray: #1a1a1a;
+$smoke: #f8f8f8;
+$seashell: #fef7f0;
+$dark-blue: #436372;
+$peach-orange: #fde3cc;
+$charcoal: #414141;
+$light-purple: #1f2044;
+$linen: #feefe2;
 $trans: all 0.5s ease-in;
 $shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
 1px 1px 5px rgba(255, 255, 255, 1);
@@ -36,60 +44,94 @@ $shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
   z-index: -1;
 }
 
+@mixin border {
+  border: 1px solid transparent;
+  outline: transparent;
+  transition: $trans;
+}
+
 @mixin active {
-  border: 2px solid $accent;
+  border: 1px solid $accent;
   border-radius: 50%;
 }
 
-@mixin focus {
+@mixin focus-text {
   color: $default;
-  border: 2px solid $default;
+  border: 1px solid $light-purple;
+
+}
+
+@mixin focus-icon {
+  border: 1px solid $accent;
+  border-radius: 50%;
 }
 
 @mixin btn {
   display: block;
-  border: none;
   background-color: transparent;
   cursor: pointer;
 }
 
 @mixin btn-hover {
   background-color: transparent;
-  color: $title;
-  border: 1px solid $title;
+  color: $nero;
+  border: 1px solid $nero;
+}
+
+@mixin filter-btn {
+  @include btn;
+  @include dmsans-700;
+  color: $gray;
+  border: none;
+  outline: transparent;
+  transition: $trans;
+}
+
+@mixin filter-hover {
+  transform: translateY(10px);
+  box-shadow: $shadow;
+  color: $dark-gray;
 }
 
 @mixin dmsans-400 {
-  font-family: 'DMSans-Regular', sans-serif;
+  font-family: 'DMSans', sans-serif;
   font-weight: 400;
 }
 
 @mixin dmsans-500 {
-  font-family: 'DMSans-Medium', sans-serif;
+  font-family: 'DMSans', sans-serif;
   font-weight: 500;
 }
 
 @mixin dmsans-700 {
-  font-family: 'DMSans-Bold', sans-serif;
+  font-family: 'DMSans', sans-serif;
   font-weight: 700;
 }
 
 @mixin popins-700 {
-  font-family: 'Poppins-Bold', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
 }
 
 @mixin rubik-400 {
-  font-family: 'Rubik-Regular', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: 400;
 }
 
 @mixin rubik-500 {
-  font-family: 'Rubik-Regular', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: 500;
 }
 
 @mixin rubik-700 {
-  font-family: 'Rubik-Regular', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: 700;
+}
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
 }
