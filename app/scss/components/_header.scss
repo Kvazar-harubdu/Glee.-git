@@ -9,23 +9,25 @@
 }
 
 .menu {
-  padding-left: 180px;
+  transform: translateX(75px);
 
   &__list {
     display: flex;
   }
 
   &__item:not(:last-child) {
-    margin-right: 25px;
+    margin-right: 20px;
   }
 
   &__link {
     @include rubik-500;
-    @include border;
     position: relative;
     padding: 6px;
     color: $dark-blue;
     font-size: 15px;
+    outline: transparent;
+    transition: $trans;
+    border: 1px solid transparent;
 
     &::before {
       @extend %menu-before;
@@ -51,7 +53,7 @@
     }
 
     &:focus {
-      @include focus-text;
+     @include focus-text;
     }
   }
 }
@@ -66,7 +68,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include border;
+    @include effect-icon;
 
     &--search {
       background-image: url('../images/icons/search.svg');
@@ -84,8 +86,8 @@
 
     &--circle-left {
       margin-left: 20px;
-      border-top-left-radius: 38%;
-      border-bottom-left-radius: 38%;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
 
       &::after {
         @extend %before;
@@ -108,8 +110,8 @@
 
     &--circle-right {
       margin-right: 22px;
-      border-top-right-radius: 38%;
-      border-bottom-right-radius: 38%;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
 
       &::after {
         @extend %before;
@@ -124,21 +126,6 @@
       width: 51px;
       height: 52px;
       background-image: url('../images/icons/user-btn.svg');
-    }
-
-    &:hover {
-      opacity: 0.7;
-      background-color: $light-brown;
-      border-radius: 50%;
-      fill: $dark-blue;
-    }
-
-    &:focus {
-      @include focus-icon;
-    }
-
-    &:active {
-      @include active;
     }
   }
 

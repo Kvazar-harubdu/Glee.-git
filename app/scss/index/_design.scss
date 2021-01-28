@@ -1,0 +1,88 @@
+.design {
+  padding: 88px 0 80px;
+
+  &__title {
+    margin-bottom: 9px;
+    text-align: center;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__descr {
+    position: relative;
+    z-index: 5;
+  }
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 370px;
+    height: 247px;
+    margin-bottom: 34px;
+    padding: 36px 0 0 36px;
+    @include dmsans-700;
+    background-color: $smoke;
+    overflow: hidden;
+
+    &:hover {
+      box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
+        2px 2px 5px rgba(154, 147, 140, 0.5);
+    }
+  }
+
+  &__caption {
+    width: 175px;
+    margin-bottom: 8px;
+    font-size: 20px;
+    line-height: 1.2;
+    color: $nero;
+  }
+
+  &__img {
+    position: relative;
+    object-fit: contain;
+    right: 110px;
+    top: 10px;
+
+    &--size {
+      right: 32px;
+      top: -16px;
+    }
+  }
+
+  &__style {
+    color: $default;
+  }
+}
+
+.desing-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  @extend %bg-img;
+  background-size: cover;
+
+  path {
+    transition: $trans;
+  }
+
+  &:hover path {
+
+    &:first-child {
+      opacity: 1;
+    }
+
+    &:nth-child(2) {
+      fill: $light-brown;
+    }
+
+    &:last-child {
+      fill: red;
+    }
+  }
+}

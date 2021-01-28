@@ -12,7 +12,11 @@ $peach-orange: #fde3cc;
 $charcoal: #414141;
 $light-purple: #1f2044;
 $linen: #feefe2;
+$light-gray: #e0e0e0;
+$raising-black: #262626;
+$bunker: #222933;
 $trans: all 0.5s ease-in;
+
 $shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
 1px 1px 5px rgba(255, 255, 255, 1);
 
@@ -44,26 +48,79 @@ $shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
   z-index: -1;
 }
 
-@mixin border {
+@mixin effect {
+  outline: transparent;
+  transition: $trans;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: $gray;
+    color: $nero;
+    border: 1px solid $nero;
+  }
+
+  &:focus {
+    color: $light-purple;
+    border: 1px solid $light-purple;
+  }
+
+  &:active {
+    background-color: $seashell;
+  }
+}
+
+@mixin effect-icon {
   border: 1px solid transparent;
   outline: transparent;
   transition: $trans;
+
+  &:hover {
+    color: $nero;
+    border: 1px solid $nero;
+    box-shadow: $shadow;
+  }
+
+  &:focus {
+    color: $light-purple;
+    border: 1px solid $light-purple;
+    border-radius: 50%;
+  }
+
+  &:active {
+    border: 1px solid $accent;
+    border-radius: 50%;
+  }
 }
 
-@mixin active {
-  border: 1px solid $accent;
-  border-radius: 50%;
+@mixin filter-hover {
+  @include btn;
+  @include dmsans-700;
+  color: $gray;
+  border: none;
+  outline: transparent;
+  transition: $trans;
+  border: 1px solid transparent;
+
+  &:hover {
+    transform: translateY(10px);
+    box-shadow: $shadow;
+    color: $dark-gray;
+  }
+
+  &:focus {
+    color: $light-purple;
+    background-color: $light-brown;
+  }
+
+  &:active {
+    border: 1px solid $accent;
+    background-color: $seashell;
+  }
 }
 
 @mixin focus-text {
   color: $default;
   border: 1px solid $light-purple;
-
-}
-
-@mixin focus-icon {
-  border: 1px solid $accent;
-  border-radius: 50%;
 }
 
 @mixin btn {
@@ -72,25 +129,10 @@ $shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
   cursor: pointer;
 }
 
-@mixin btn-hover {
-  background-color: transparent;
-  color: $nero;
-  border: 1px solid $nero;
-}
-
-@mixin filter-btn {
-  @include btn;
-  @include dmsans-700;
-  color: $gray;
-  border: none;
-  outline: transparent;
-  transition: $trans;
-}
-
-@mixin filter-hover {
-  transform: translateY(10px);
-  box-shadow: $shadow;
-  color: $dark-gray;
+@mixin article {
+  color: $bunker;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 @mixin dmsans-400 {
@@ -108,9 +150,19 @@ $shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
   font-weight: 700;
 }
 
+@mixin popins-500 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
 @mixin popins-700 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
+}
+
+@mixin rubik-300 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
 }
 
 @mixin rubik-400 {

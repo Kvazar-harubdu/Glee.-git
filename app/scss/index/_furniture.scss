@@ -19,11 +19,14 @@
     height: 30px;
     padding: 0;
     @include btn;
-    @include border;
     font-size: 11px;
     border: none;
     border-radius: 50%;
     background-color: $peach-orange;
+    outline: transparent;
+    transition: $trans;
+    border: 1px solid transparent;
+
 
     &:hover {
       transform: scale(1.5);
@@ -35,7 +38,8 @@
     }
 
     &:active {
-      @include active;
+      border: 1px solid $accent;
+      background-color: $seashell;
     }
   }
 
@@ -55,7 +59,7 @@
   }
 
   &__title {
-    @include rubik-700;
+    @include rubik-500;
     padding-top: 220px;
     margin-bottom: 20px;
     font-size: 72px;
@@ -84,35 +88,30 @@
     max-width: 200px;
     background-color: $default;
     color: #fff;
-    @include border;
-
-    &:hover {
-      @include btn-hover;
-    }
+    @include effect;
 
     &:focus path {
       fill: $accent;
-    }
-
-    &:active {
-      @include active;
     }
   }
 }
 
 .support {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 170px;
   margin-bottom: 55px;
-  background-color: $seashell;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-height: 170px;
+    background-color: $seashell;
+  }
 
   &__item {
     display: inline-block;
     position: relative;
     max-width: 256px;
     padding-left: 55px;
+    margin: auto;
 
     &::before {
       @extend %before;
@@ -128,8 +127,9 @@
         @extend %before;
         width: 1px;
         height: 170px;
-        top: -40px;
-        right: -60%;
+        top: 50%;
+        right: calc(-57% + 1px);
+        transform: translateY(-50%);
         background-color: $pampas;
       }
     }

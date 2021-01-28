@@ -3,7 +3,6 @@ body {
   height: 100%;
 }
 
-
 body {
   display: flex;
   flex-direction: column;
@@ -55,4 +54,25 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+
+  &__item:not(:last-child) {
+    margin-right: 19px;
+  }
+
+  &__btn {
+    @include filter-hover;
+  }
+
+  &--gallery {
+    margin-bottom: 80px;
+  }
+
+  &--design {
+    margin-bottom: 69px;
+  }
 }

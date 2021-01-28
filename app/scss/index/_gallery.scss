@@ -12,28 +12,6 @@
   }
 }
 
-.filter {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 80px;
-
-  &__item:not(:last-child) {
-    margin-right: 19px;
-  }
-
-  &__btn {
-    @include filter-btn;
-
-    &:hover {
-      @include filter-hover;
-    }
-
-    &:focus {
-      color: $default;
-    }
-  }
-}
-
 .card-block {
   position: relative;
   display: flex;
@@ -93,8 +71,7 @@
     border-radius: 50%;
     border: none;
     color: inherit;
-    outline: transparent;
-    transition: $trans;
+    @include effect-icon;
 
     &--fill {
       background-color: $default;
@@ -102,14 +79,6 @@
 
     &:hover path {
       fill: $nero;
-    }
-
-    &:hover {
-      box-shadow: $shadow;
-    }
-
-    &:focus {
-      @include focus-icon;
     }
   }
 }

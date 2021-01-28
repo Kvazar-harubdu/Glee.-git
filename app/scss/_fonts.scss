@@ -30,11 +30,31 @@
 
 @font-face {
   font-family: 'Poppins';
+  font-weight: 500;
+  font-style: normal;
+  src:
+    url('../fonts/Poppins-SemiBold.woff2'),
+    url('../fonts/Poppins-SemiBold.woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
   font-weight: 700;
   font-style: normal;
   src:
     url('../fonts/Poppins-Bold.woff2'),
     url('../fonts/Poppins-Bold.woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-weight: 300;
+  font-style: normal;
+  src:
+    url('../fonts/Rubik-Light.woff2'),
+    url('../fonts/Rubik-Light.woff');
   font-display: swap;
 }
 
