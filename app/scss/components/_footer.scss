@@ -102,10 +102,10 @@
   &__email {
     max-width: 170px;
     padding: 0 15px;
+    @include focus-text;
     background-color: $seashell;
     border: none;
-    outline: transparent;
-    transition: $trans;
+
 
     &::placeholder {
       font-size: 12px;
@@ -115,10 +115,6 @@
     &:hover {
       box-shadow: $shadow;
       background-color: $pampas;
-    }
-
-    &:focus {
-      @include focus-text;
     }
 
     &:active {
@@ -133,5 +129,31 @@
     @include effect;
     color: #fff;
     background-color: $default;
+  }
+}
+
+@media (max-width: 960px) {
+  .footer {
+    padding-top: 50px;
+
+    &__wrapper {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    &__info {
+      padding-right: 15px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .footer__copy {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .footer__copy-text {
+    padding-bottom: 15px;
   }
 }

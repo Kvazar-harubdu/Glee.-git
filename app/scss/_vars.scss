@@ -15,6 +15,11 @@ $linen: #feefe2;
 $light-gray: #e0e0e0;
 $raising-black: #262626;
 $bunker: #222933;
+$alice-blue: #edf1f4;
+$amethyst-smoke: #8b8f94;
+$lavender: #e6eaf0;
+$white-smoke: #f6f6f6;
+$comet: #565872;
 $trans: all 0.5s ease-in;
 
 $shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
@@ -118,9 +123,33 @@ $shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
   }
 }
 
+@mixin path {
+  path {
+    transition: $trans;
+  }
+
+  &:hover path {
+    fill: $accent;
+  }
+
+  &:focus path {
+    fill: $light-purple;
+  }
+
+  &:active path {
+    fill: $amethyst-smoke;
+  }
+}
+
 @mixin focus-text {
-  color: $default;
-  border: 1px solid $light-purple;
+  outline: transparent;
+  transition: $trans;
+  border: 1px solid transparent;
+
+  &:focus {
+    color: $default;
+    border: 1px solid $light-purple;
+  }
 }
 
 @mixin btn {
@@ -133,6 +162,14 @@ $shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
   color: $bunker;
   font-size: 12px;
   text-transform: uppercase;
+}
+
+@mixin contact-btn {
+  width: 100%;
+  height: 60px;
+  display: block;
+  @include rubik-500;
+  font-size: 18px;
 }
 
 @mixin dmsans-400 {

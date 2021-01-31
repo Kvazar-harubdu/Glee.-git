@@ -10,31 +10,25 @@
     transform: translateX(50%);
   }
 
-  &__slider li:not(:last-child) {
+  li:not(:last-child) {
     margin-right: 12px;
   }
 
-  &__slider button {
+  button {
     width: 30px;
     height: 30px;
     padding: 0;
     @include btn;
+    @include focus-text;
     font-size: 11px;
     border: none;
     border-radius: 50%;
     background-color: $peach-orange;
-    outline: transparent;
-    transition: $trans;
-    border: 1px solid transparent;
 
 
     &:hover {
       transform: scale(1.5);
       background-color: $gray;
-    }
-
-    &:focus {
-      @include focus-text;
     }
 
     &:active {
@@ -56,6 +50,7 @@
 
   &__item {
     @extend %bg-img;
+    background-size: cover;
   }
 
   &__title {
@@ -71,8 +66,13 @@
     max-width: 450px;
   }
 
+  &__box {
+    margin: auto 0;
+    max-width: 640px;
+  }
+
   &__images {
-    object-fit: contain;
+    object-fit: cover;
   }
 
   &__text {
@@ -89,79 +89,37 @@
     background-color: $default;
     color: #fff;
     @include effect;
+    @include path;
+  }
+}
 
-    &:focus path {
-      fill: $accent;
+@media (max-width: 960px) {
+  .furniture {
+    &__inner {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(350px + (820 - 350) * ((100vh - 320px) / (960 -320)));
+    }
+
+    &__descr {
+      text-align: center;
+    }
+
+    &__title {
+      padding-top: 40px;
+      font-size: calc(30px + (72 - 30) * ((100vw - 320px) / (960 - 320)));
+    }
+
+    &__text {
+      margin: 0 auto 40px;
+      font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (960 - 320)));
+    }
+
+    &__btn {
+      margin: 0 auto;
+      width: calc(120px + (200 - 100) * ((100vw - 320px) / (960 - 320)));
     }
   }
 }
 
-.support {
-  margin-bottom: 55px;
-
-  &__wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    min-height: 170px;
-    background-color: $seashell;
-  }
-
-  &__item {
-    display: inline-block;
-    position: relative;
-    max-width: 256px;
-    padding-left: 55px;
-    margin: auto;
-
-    &::before {
-      @extend %before;
-      width: 55px;
-      height: 55px;
-      left: -30px;
-      top: 10px;
-    }
-
-    &:not(:last-child) {
-
-      &::after {
-        @extend %before;
-        width: 1px;
-        height: 170px;
-        top: 50%;
-        right: calc(-57% + 1px);
-        transform: translateY(-50%);
-        background-color: $pampas;
-      }
-    }
-
-    &--time {
-      &::before {
-        background-image: url('../images/twenty-four.png');
-      }
-    }
-
-    &--truck {
-      &::before {
-        background-image: url('../images/delivery-truck.png');
-      }
-    }
-
-    &--card {
-      &::before {
-        background-image: url('../images/credit-card.png');
-      }
-    }
-  }
-
-  &__title {
-    @include dmsans-700;
-    display: block;
-    font-size: 18px;
-    color: $charcoal;
-  }
-
-  &__text {
-    display: block;
-    font-weight: 400;
-  }
-}

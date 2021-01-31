@@ -2,21 +2,29 @@
   padding: 45px 0;
 
   &__wrapper {
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+  }
+
+  &__logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(-50%);
   }
 }
 
 .menu {
-  transform: translateX(75px);
+  transform: translateY(-15px);
 
   &__list {
     display: flex;
   }
 
   &__item:not(:last-child) {
-    margin-right: 20px;
+    margin-right: 24px;
   }
 
   &__link {
@@ -25,9 +33,7 @@
     padding: 6px;
     color: $dark-blue;
     font-size: 15px;
-    outline: transparent;
-    transition: $trans;
-    border: 1px solid transparent;
+    @include focus-text;
 
     &::before {
       @extend %menu-before;
@@ -51,23 +57,84 @@
     &:hover::after {
       @extend %menu-hover;
     }
+  }
+}
 
-    &:focus {
-     @include focus-text;
+.burger-menu {
+  display: none;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  @include effect-icon;
+  background-color: $default;
+  border: 1px solid $accent;
+  border-radius: 50%;
+  border: none;
+  transform: translateY(50px);
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 10;
+
+  &__btn {
+    display: block;
+    width: 30px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: $accent;
+    box-shadow: 0 1px 3px $light-brown;
+
+    &::before,
+    &::after {
+      @extend %before;
+      width: 30px;
+      height: 4px;
+      border-radius: 5px;
+      background-color: $accent;
+      box-shadow: 0 1px 3px $light-brown;
     }
+
+    &::before {
+      transform: translateY(10px);
+    }
+
+    &::after {
+      transform: translateY(-10px);
+    }
+  }
+
+  &--open .burger-menu__btn {
+    background: transparent;
+    box-shadow: none;
+    transform: translateX(-20px);
+  }
+
+  &--open .burger-menu__btn::before {
+    transform: rotate(45deg) translate(15px, -15px);
+  }
+
+  &--open .burger-menu__btn::after {
+    transform: rotate(-45deg) translate(15px, 15px);
   }
 }
 
 .user-menu {
-  flex-basis: 320px;
   display: flex;
   align-items: center;
+  flex-basis: 320px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(-50%);
   @extend %bg-img;
 
   &__icon {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: -5px;
     @include effect-icon;
 
     &--search {
@@ -85,7 +152,7 @@
     }
 
     &--circle-left {
-      margin-left: 20px;
+      margin-left: 21px;
       border-top-left-radius: 25px;
       border-bottom-left-radius: 25px;
 
@@ -104,12 +171,12 @@
         right: -5px;
         top: 10px;
         background-color: #fff;
-        z-index: 7;
+        z-index: 2;
       }
     }
 
     &--circle-right {
-      margin-right: 22px;
+      margin-right: 18px;
       border-top-right-radius: 25px;
       border-bottom-right-radius: 25px;
 
@@ -140,5 +207,88 @@
     background-color: #fff;
     border-radius: 50%;
     z-index: 5;
+  }
+}
+
+@media (max-width: 1250px) {
+  .header__logo {
+    z-index: 15;
+  }
+
+  .menu {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+
+    &__list {
+      position: absolute;
+      display: block;
+      text-align: center;
+      width: 60%;
+      top: -1000%;
+      right: 20%;
+      transition: $trans;
+
+      &--active {
+        top: 50px;
+      }
+    }
+
+    &__item {
+      background-color: $pampas;
+      border-radius: 25px;
+
+      &:not(:last-child) {
+        margin: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    &__link {
+      display: block;
+      padding: 10px 0;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      &:hover {
+        color: $nero;
+      }
+
+      &:focus {
+        border-radius: 25px;
+      }
+    }
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .menu__list--active {
+    top: 100px;
+  }
+
+  .user-menu {
+    top: 65%;
+    left: -10%;
+    transform: scale(0.8);
+  }
+
+  .burger-menu {
+    right: -85%;
+    transform: translateY(-20%);
+  }
+}
+
+@media(min-width:1251px) {
+  .menu__list {
+    display: flex !important;
   }
 }

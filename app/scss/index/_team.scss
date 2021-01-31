@@ -1,0 +1,105 @@
+.team {
+  padding-top: 120px;
+  margin-bottom: -40px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__description {
+    max-width: 303px;
+  }
+
+  &__title {
+    transform: translateY(-12px);
+    margin-bottom: 0px;
+  }
+
+  &__text {
+    line-height: 1.9;
+    margin-bottom: 32px;
+  }
+
+  &__btn {
+    width: 170px;
+    height: 50px;
+    @include popins-500;
+    @include effect;
+    @include path;
+    background-color: $default;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 95px;
+  }
+
+  &__item {
+    margin-bottom: -10px;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 324px;
+    height: 110px;
+    box-shadow: 0px 6px 57px 0px rgba(37, 37, 37, 0.05);
+    background-color: #fff;
+    padding: 0 21px 0 26px;
+    transform: translateY(-50px);
+  }
+
+  &__author {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    @include dmsans-700;
+    font-size: 22px;
+    color: $dark-blue;
+  }
+
+  &__profession {
+    @include rubik-400;
+    color: $comet;
+  }
+
+  &__network {
+    display: flex;
+  }
+
+  &__link:not(:last-child) {
+    margin-right: 5px;
+  }
+  &__social-img {
+    @include effect-icon;
+  }
+}
+
+@media (max-width: 1250px) {
+  .team {
+    padding-top: 50px;
+
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    &__description {
+      max-width: 100%;
+      margin-bottom: 25px;
+    }
+
+    &__block {
+      justify-content: space-around;
+      margin: 0;
+    }
+  }
+}

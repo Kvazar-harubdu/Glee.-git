@@ -1,0 +1,80 @@
+.advantage {
+  background-color: $light-brown;
+  min-height: 320px;
+  padding-top: 84px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 30px;
+    color: $accent;
+    @include dmsans-700;
+    text-align: center;
+  }
+
+  &__item {
+    padding-top: 64px;
+    position: relative;
+
+    &::before {
+      @extend %before;
+      width: 78px;
+      height: 64px;
+      top: 0;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    &--graph::before {
+      background-image: url('../images/advantage-graph.svg');
+    }
+
+    &--car::before {
+      top: 10px;
+      background-image: url('../images/advantage-car.svg');
+    }
+
+    &--time::before {
+      background-image: url('../images/advantage-time.svg');
+    }
+
+    &--prize::before {
+      background-image: url('../images/advantage-prize.svg');
+    }
+  }
+
+  &__num {
+    padding-top: 20px;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  &__result {
+    font-size: 18px;
+  }
+}
+
+@media (max-width:640px) {
+  .advantage {
+    padding-top: 20px;
+
+    &__wrapper {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    &__item {
+      padding-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 458px) {
+
+  .advantage__wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+}

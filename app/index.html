@@ -20,10 +20,13 @@
   <header class="header">
     <div class="container">
       <div class="header__wrapper">
-        <a class="logo" href="#">
+        <a class=" header__logo logo" href="#">
           <img class="logo__img" src="images/logo.png" alt="logo">
         </a>
         <nav class="menu">
+          <div class="burger-menu">
+            <span class="burger-menu__btn"></span>
+          </div>
           <ul class="menu__list">
             <li class="menu__item">
               <a class="menu__link" href="#">Home +</a>
@@ -72,6 +75,7 @@
       </div>
     </div>
   </header>
+
   <main class="main">
 
     <section class="furniture">
@@ -93,7 +97,9 @@
                   </svg>
                 </a>
               </div>
-              <img class="furniture__images" src="images/sofa.png" alt="white sofa">
+              <div class="furniture__box">
+                <img class="furniture__images" src="images/sofa.png" alt="white sofa">
+              </div>
             </div>
           </div>
           <div class="furniture__item" style="background-image: url('images/slider-bg.jpg')">
@@ -112,7 +118,9 @@
                   </svg>
                 </a>
               </div>
-              <img class="furniture__images" src="images/sofa.png" alt="white sofa">
+              <div class="furniture__box">
+                <img class="furniture__images" src="images/sofa.png" alt="white sofa">
+              </div>
             </div>
           </div>
           <div class="furniture__item" style="background-image: url('images/slider-bg.jpg')">
@@ -131,7 +139,9 @@
                   </svg>
                 </a>
               </div>
-              <img class="furniture__images" src="images/sofa.png" alt="white sofa">
+              <div class="furniture__box">
+                <img class="furniture__images" src="images/sofa.png" alt="white sofa">
+              </div>
             </div>
           </div>
         </div>
@@ -173,7 +183,7 @@
     <section class="gallery">
       <div class="container container--small">
         <h2 class="gallery__title title">Products of the week</h2>
-        <ul class="filter filter--gallery">
+        <ul class="filter gallery__filter">
           <li class="filter__item">
             <button class="filter__btn" type="button" data-filter="all">All</button>
           </li>
@@ -192,7 +202,9 @@
         </ul>
         <div class="gallery__inner">
           <div class="card-block mix sofa">
-            <img class="card-block__img" src="images/gallery/chair.png" alt="white chair">
+            <div class="card-block__box">
+              <img class="card-block__img" src="images/gallery/chair.png" alt="white chair">
+            </div>
             <ul class="gallery-icon">
               <li class="gallery-icon__item">
                 <a class="gallery-icon__btn" href="images/gallery/chair.png" data-fancybox="images">
@@ -231,7 +243,9 @@
             </div>
           </div>
           <div class="card-block  mix wooden-radio">
-            <img class="card-block__img" src="images/gallery/chair-1.png" alt="white chair">
+            <div class="card-block__box">
+              <img class="card-block__img" src="images/gallery/chair-1.png" alt="white chair">
+            </div>
             <ul class="gallery-icon">
               <li class="gallery-icon__item">
                 <a class="gallery-icon__btn" href="images/gallery/chair-1.png" data-fancybox="images">
@@ -270,7 +284,9 @@
             </div>
           </div>
           <div class="card-block  mix wooden-radio">
-            <img class="card-block__img" src="images/gallery/chair-2.png" alt="white chair">
+            <div class="card-block__box">
+              <img class="card-block__img" src="images/gallery/chair-2.png" alt="white chair">
+            </div>
             <ul class="gallery-icon">
               <li class="gallery-icon__item">
                 <a class="gallery-icon__btn" href="images/gallery/chair-2.png" data-fancybox="images">
@@ -309,7 +325,9 @@
             </div>
           </div>
           <div class="card-block  mix wooden-chair">
-            <img class="card-block__img" src="images/gallery/chair-3.png" alt="white chair">
+            <div class="card-block__box">
+              <img class="card-block__img" src="images/gallery/chair-3.png" alt="white chair">
+            </div>
             <ul class="gallery-icon">
               <li class="gallery-icon__item">
                 <a class="gallery-icon__btn" href="images/gallery/chair-3.png" data-fancybox="images">
@@ -348,7 +366,9 @@
             </div>
           </div>
           <div class="card-block  mix wooden-chair">
-            <img class="card-block__img" src="images/gallery/chair-4.png" alt="white chair">
+            <div class="card-block__box">
+              <img class="card-block__img" src="images/gallery/chair-4.png" alt="white chair">
+            </div>
             <ul class="gallery-icon">
               <li class="gallery-icon__item">
                 <a class="gallery-icon__btn" href="images/gallery/chair-4.png" data-fancybox="images">
@@ -387,7 +407,9 @@
             </div>
           </div>
           <div class="card-block  mix sofa">
-            <img class="card-block__img" src="images/gallery/chair-5.png" alt="white chair">
+            <div class="card-block__box">
+              <img class="card-block__img" src="images/gallery/chair-5.png" alt="white chair">
+            </div>
             <ul class="gallery-icon">
               <li class="gallery-icon__item">
                 <a class="gallery-icon__btn" href="images/gallery/chair-5.png" data-fancybox="images">
@@ -426,7 +448,9 @@
             </div>
           </div>
           <div class="card-block  mix wooden-table">
-            <img class="card-block__img" src="images/gallery/table.png" alt="white table">
+            <div class="card-block__box">
+              <img class="card-block__img" src="images/gallery/table.png" alt="white table">
+            </div>
             <ul class="gallery-icon">
               <li class="gallery-icon__item">
                 <a class="gallery-icon__btn" href="images/gallery/table.png" data-fancybox="images">
@@ -465,7 +489,9 @@
             </div>
           </div>
           <div class="card-block  mix wooden-table">
-            <img class="card-block__img" src="images/gallery/table-1.png" alt="white table">
+            <div class="card-block__box">
+              <img class="card-block__img" src="images/gallery/table-1.png" alt="white table">
+            </div>
             <ul class="gallery-icon">
               <li class="gallery-icon__item">
                 <a class="gallery-icon__btn" href="images/gallery/table-1.png" data-fancybox="images">
@@ -511,7 +537,9 @@
       <div class="container">
         <div class="decor__wrapper">
           <div class="decor__item">
-            <img class="decor__img" src="images/decor-lamp-table.png" alt="decor lamp">
+            <div class="decor__images">
+              <img class="decor__img" src="images/decor-lamp-table.png" alt="decor lamp">
+            </div>
             <div class="decor__inner">
               <h3 class="decor__title">
                 Mirum Notare Tellus
@@ -522,17 +550,17 @@
               <a class="decor__btn button" href="#">
                 View More
                 <svg width="22" height="9" viewBox="0 0 22 9">
-                  <svg width="22px" height="9px">
                     <path fill-rule="evenodd" fill="rgb(67, 99, 114)"
                       d="M0.296,5.472 L0.288,5.470 L17.244,5.470 L17.144,8.329 C17.089,8.383 17.060,8.458 17.060,8.534 C17.060,8.611 17.089,8.684 17.144,8.738 L17.316,8.912 C17.370,8.966 17.443,8.996 17.520,8.996 C17.597,8.996 17.669,8.966 17.724,8.912 L21.916,4.700 C21.970,4.646 22.000,4.573 22.000,4.496 C22.000,4.419 21.970,4.346 21.916,4.292 L17.724,0.079 C17.669,0.026 17.597,-0.004 17.520,-0.004 C17.443,-0.004 17.370,0.026 17.316,0.079 L17.144,0.253 C17.089,0.307 17.060,0.379 17.060,0.457 C17.060,0.534 17.089,0.603 17.144,0.656 L17.257,3.521 L0.292,3.521 C0.133,3.521 -0.000,3.658 -0.000,3.817 L-0.000,5.187 C-0.000,5.346 0.137,5.472 0.296,5.472 Z" />
-                  </svg>
                 </svg>
               </a>
             </div>
           </div>
           <div class="decor__item">
-            <img class="decor__img decor__img--floor" src="images/decor-lamp-floor.png" alt="decor lamp">
-            <div class="decor__inner decor__inner--size">
+            <div class="decor__images">
+              <img class="decor__img" src="images/decor-lamp-floor.png" alt="decor lamp">
+            </div>
+            <div class="decor__inner">
               <h3 class="decor__title">
                 Malesuada Tempor Euismod
               </h3>
@@ -541,11 +569,9 @@
               </p>
               <a class="decor__btn button" href="#">
                 View More
-                <svg width="22" height="9" viewBox="0 0 22 9">
-                  <svg width="22px" height="9px">
+                <svg width="22" height="9" viewBox="0 0 22 9">       
                     <path fill-rule="evenodd" fill="rgb(67, 99, 114)"
                       d="M0.296,5.472 L0.288,5.470 L17.244,5.470 L17.144,8.329 C17.089,8.383 17.060,8.458 17.060,8.534 C17.060,8.611 17.089,8.684 17.144,8.738 L17.316,8.912 C17.370,8.966 17.443,8.996 17.520,8.996 C17.597,8.996 17.669,8.966 17.724,8.912 L21.916,4.700 C21.970,4.646 22.000,4.573 22.000,4.496 C22.000,4.419 21.970,4.346 21.916,4.292 L17.724,0.079 C17.669,0.026 17.597,-0.004 17.520,-0.004 C17.443,-0.004 17.370,0.026 17.316,0.079 L17.144,0.253 C17.089,0.307 17.060,0.379 17.060,0.457 C17.060,0.534 17.089,0.603 17.144,0.656 L17.257,3.521 L0.292,3.521 C0.133,3.521 -0.000,3.658 -0.000,3.817 L-0.000,5.187 C-0.000,5.346 0.137,5.472 0.296,5.472 Z" />
-                  </svg>
                 </svg>
               </a>
             </div>
@@ -557,21 +583,21 @@
     <section class="design">
       <div class="container container--small">
         <h2 class="design__title title">New Design</h2>
-        <ul class="filter filter--design">
+        <ul class="filter design__filter">
           <li class="filter__item">
-            <button class="filter__btn" type="button" data-filter="all">All</button>
+            <button class="filter__button" type="button" data-filter="all">All</button>
           </li>
           <li class="filter__item">
-            <button class="filter__btn" type="button" data-filter=".sofa">Furnitures</button>
+            <button class="filter__button" type="button" data-filter=".sofa">Furnitures</button>
           </li>
           <li class="filter__item">
-            <button class="filter__btn" type="button" data-filter=".chair">Chairs</button>
+            <button class="filter__button" type="button" data-filter=".chair">Chairs</button>
           </li>
           <li class="filter__item">
-            <button class="filter__btn" type="button" data-filter=".bed">Lighting</button>
+            <button class="filter__button" type="button" data-filter=".bed">Lighting</button>
           </li>
           <li class="filter__item">
-            <button class="filter__btn" type="button" data-filter=".sofa, .chair">Decor</button>
+            <button class="filter__button" type="button" data-filter=".sofa, .chair">Decor</button>
           </li>
         </ul>
         <div class="design__inner">
@@ -582,7 +608,7 @@
               </h3>
               <span class="design__style">Classic</span>
             </div>
-            <img class="design__img" src="images/design/sofa-1.png" alt="white sofa">
+            <img class="design__img" src="images/design/sofa-1.jpg" alt="white sofa">
           </a>
           <a class="design__card mix bed" href="#">
             <div class="design__descr">
@@ -591,7 +617,7 @@
               </h3>
               <span class="design__style">Classic</span>
             </div>
-            <img class="design__img" src="images/design/bed-1.png" alt="white bed">
+            <img class="design__img" src="images/design/bed-1.jpg" alt="white bed">
           </a>
           <a class="design__card mix chair" href="#">
             <div class="design__descr">
@@ -600,7 +626,7 @@
               </h3>
               <span class="design__style">Classic</span>
             </div>
-            <img class="design__img design__img--size" src="images/design/office-chair-1.png" alt="office chair black">
+            <img class="design__img" src="images/design/office-chair-1.jpg" alt="office chair black">
           </a>
           <a class="design__card mix bed" href="#">
             <div class="design__descr">
@@ -609,7 +635,7 @@
               </h3>
               <span class="design__style">Classic</span>
             </div>
-            <img class="design__img" src="images/design/bed-2.png" alt="white bed big">
+            <img class="design__img" src="images/design/bed-2.jpg" alt="white bed big">
           </a>
           <a class="design__card mix chair" href="#">
             <div class="design__descr">
@@ -618,7 +644,7 @@
               </h3>
               <span class="design__style">Classic</span>
             </div>
-            <img class="design__img design__img--size" src="images/design/office-chair-2.png" alt="office chair white">
+            <img class="design__img" src="images/design/office-chair-2.jpg" alt="office chair white">
           </a>
           <a class="design__card mix sofa" href="#">
             <div class="design__descr">
@@ -627,7 +653,7 @@
               </h3>
               <span class="design__style">Classic</span>
             </div>
-            <img class="design__img" src="images/design/sofa-2.png" alt="white sofa">
+            <img class="design__img" src="images/design/sofa-2.jpg" alt="white sofa">
           </a>
         </div>
       </div>
@@ -649,58 +675,59 @@
     <section class="news">
       <div class="container container--small">
         <div class="news__top">
-          <h2 class="title">Our Insights & Articles</h2>
+          <h2 class=" news__title title">Our Insights & Articles</h2>
           <a class="news__btn" href="#">View All</a>
         </div>
         <div class="news__inner">
-          <div class="news__item">
-            <a href="" class="news__link">
-              <img class="news__img" src="images/decor-room-1.jpg" alt="new design room">
+          <article class="article">
+            <a class="article__link" href="#">
+              <img class="article__img" src="images/decor-room-1.jpg" alt="new design room">
             </a>
-            <div class="news__content">
-              <a class="news__button" href="#">news</a>
-              <p class="news__descr">
+            <div class="article__content">
+              <a class="article__button" href="#">news</a>
+              <p class="article__descr">
                 Diusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
               </p>
-              <div class="news__info">
-                <a class="news__data" href="#">28 january, 2020</a>
-                <a class="news__author" href="">by admin</a>
+              <div class="article__info">
+                <time class="article__data" datetime="2020-01-28">28 january, 2020</time>
+                <a class="article__author" href="">by admin</a>
               </div>
             </div>
-          </div>
-          <div class="news__item">
-            <a href="" class="news__link">
-              <img class="news__img" src="images/decor-room-2.jpg" alt="new design room">
+          </article>
+          <article class="article">
+            <a class="article__link" href="#">
+              <img class="article__img" src="images/decor-room-2.jpg" alt="new design room">
             </a>
-            <div class="news__content">
-              <a class="news__button" href="#">news</a>
-              <p class="news__descr">
+            <div class="article__content">
+              <a class="article__button" href="#">news</a>
+              <p class="article__descr">
                 Aonsectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
               </p>
-              <div class="news__info">
-                <a class="news__data" href="#">28 january, 2020</a>
-                <a class="news__author" href="">by admin</a>
+              <div class="article__info">
+                <time class="article__data" datetime="2020-01-28">28 january, 2020</time>
+                <a class="article__author" href="">by admin</a>
               </div>
             </div>
-          </div>
-          <div class="news__item">
-            <a href="" class="news__link">
-              <img class="news__img" src="images/decor-room-3.jpg" alt="new design room">
+          </article>
+          <article class="article">
+            <a class="article__link" href="#">
+              <img class="article__img" src="images/decor-room-3.jpg" alt="new design room">
             </a>
-            <div class="news__content">
-              <a class="news__button" href="#">news</a>
-              <p class="news__descr">
+            <div class="article__content">
+              <a class="article__button" href="#">news</a>
+              <p class="article__descr">
                 Rncididunt ut labore et dolore magna aliqua. Ut enim
               </p>
-              <div class="news__info">
-                <a class="news__data" href="#">28 january, 2020</a>
-                <a class="news__author" href="">by admin</a>
+              <div class="article__info">
+                <time class="article__data" datetime="2020-01-28">28 january, 2020</time>
+                <a class="article__author" href="">by admin</a>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
+
     <div class="partners">
       <div class="container container--small">
         <div class="partners__wrapper">

@@ -1,0 +1,37 @@
+.bread-crumbs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 125px;
+  background-color: $alice-blue;
+
+  &__title {
+    @include rubik-300;
+    color: $bunker;
+    font-size: 36px;
+    line-height: 1;
+    padding-bottom: 5px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    color: $amethyst-smoke;
+  }
+
+  &__item:not(:last-of-type)::after {
+    content: "/";
+    padding-right: 5px;
+  }
+
+  &__link {
+    color: inherit;
+  }
+}
+
+@media (max-width: 640px) {
+  .bread-crumbs__title {
+    font-size: calc(30px + (36 - 30) * ((100vw - 320px) / (640 - 320)));
+  }
+}

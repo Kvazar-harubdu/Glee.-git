@@ -1,7 +1,7 @@
 .partners {
   height: 436px;
-  margin-top: -50px;
-  padding: 160px 0 90px;
+  margin-top: -170px;
+  padding: 160px 10px 90px;
   background-color: $seashell;
 
   &__wrapper {
@@ -16,5 +16,11 @@
 
   &__img {
     margin: 0 auto;
+  }
+}
+
+@media (max-width:1250px) {
+  .partners {
+    margin-top: -190px;
   }
 }

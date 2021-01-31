@@ -25,13 +25,18 @@
   box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
   text-align: center;
 
+
   &:hover .gallery-icon {
-    display: flex;
+    opacity: 1;
+  }
+
+  &__box {
+    margin: auto;
   }
 
   &__img {
-    margin: auto 0;
     object-fit: contain;
+    background-size: contain;
     cursor: pointer;
   }
 
@@ -50,12 +55,14 @@
 }
 
 .gallery-icon {
-  display: none;
+  display: flex;
   justify-content: center;
   position: absolute;
   left: 50%;
   top: 46%;
   transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.5s;
 
   &__item:not(:last-child) {
     margin-right: 16px;
@@ -80,5 +87,25 @@
     &:hover path {
       fill: $nero;
     }
+  }
+
+  &__filter {
+    margin-bottom: 80px;
+  }
+}
+
+.filter {
+  &__btn {
+    @include filter-hover;
+  }
+}
+
+@media (max-width: 960px) {
+  .gallery__inner {
+    justify-content: space-around;
+  }
+
+  .card-block {
+    margin-bottom: 20px;
   }
 }

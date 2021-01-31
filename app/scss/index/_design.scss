@@ -14,24 +14,18 @@
 
   &__descr {
     position: relative;
+    margin: 36px 0 0 36px;
     z-index: 5;
   }
 
   &__card {
-    display: flex;
-    justify-content: space-between;
     flex-basis: 370px;
     height: 247px;
     margin-bottom: 34px;
-    padding: 36px 0 0 36px;
     @include dmsans-700;
+    @include effect;
     background-color: $smoke;
     overflow: hidden;
-
-    &:hover {
-      box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
-        2px 2px 5px rgba(154, 147, 140, 0.5);
-    }
   }
 
   &__caption {
@@ -44,18 +38,22 @@
 
   &__img {
     position: relative;
-    object-fit: contain;
-    right: 110px;
-    top: 10px;
-
-    &--size {
-      right: 32px;
-      top: -16px;
-    }
+    top: -120px;
+    @extend %bg-img;
   }
 
   &__style {
     color: $default;
+  }
+
+  &__filter {
+    margin-bottom: 69px;
+  }
+}
+
+.filter {
+  &__button {
+    @include filter-hover;
   }
 }
 
@@ -84,5 +82,35 @@
     &:last-child {
       fill: red;
     }
+  }
+
+  &:focus path {
+    fill: $light-purple;
+
+    &:last-child {
+      fill: red;
+    }
+  }
+
+  &:active path {
+    fill: $seashell;
+  }
+}
+
+@media (max-width: 1250px) {
+  .design {
+    padding: 50px 0;
+
+    &__inner {
+      justify-content: space-around;
+    }
+
+    &__filter {
+      margin-bottom: 50px;
+    }
+  }
+
+  .desing-video {
+    min-height: calc(250px + (500 - 250) * ((100vw - 320px) / (1250 - 320)));
   }
 }

@@ -42,6 +42,7 @@ body {
   font-size: 15px;
   background-color: transparent;
   transition: $trans;
+  @include path;
 }
 
 .speak {
@@ -63,16 +64,26 @@ body {
   &__item:not(:last-child) {
     margin-right: 19px;
   }
+}
 
-  &__btn {
-    @include filter-hover;
+@media (max-width: 615px) {
+  .title {
+    font-size: calc(24px + (36 - 24) * ((100vw - 320px) / (615 - 320)));
   }
+}
 
-  &--gallery {
-    margin-bottom: 80px;
-  }
+@media (max-width: 458px) {
+  .filter {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
 
-  &--design {
-    margin-bottom: 69px;
+    &__item {
+      margin-bottom: 20px;
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
   }
 }

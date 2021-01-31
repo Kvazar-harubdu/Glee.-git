@@ -1,0 +1,169 @@
+.history {
+  padding: 120px 0;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__img {
+    margin-right: 48px;
+  }
+
+  &__inner {
+    margin-top: 65px;
+  }
+
+  &__time {
+    display: flex;
+    margin-bottom: 5px;
+  }
+
+  &__years {
+    @include rubik-700;
+    color: $default;
+    font-size: 148px;
+    line-height: 1;
+    margin-right: 15px;
+  }
+
+  &__skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__skill:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  &__title {
+    color: $accent;
+    margin-bottom: 23px;
+  }
+
+  &__text {
+    @include rubik-400;
+    padding-bottom: 60px;
+    line-height: 1.9;
+    border-bottom: 1px solid $lavender;
+  }
+
+  &__info {
+    display: flex;
+    padding-top: 38px;
+  }
+
+  &__item {
+    flex-basis: calc(570px/3);
+    @include dmsans-700;
+    display: block;
+    text-align: center;
+    position: relative;
+
+    &:not(:first-child) {
+      margin-left: 25px;
+    }
+
+    &::before {
+      @extend %before;
+      left: 0;
+      top: 9px;
+      width: 43px;
+      height: 40px;
+    }
+
+    &--project {
+      padding: 0 25px 0 55px;
+      border-right: 1px solid $lavender;
+
+      &::before {
+        background-image: url('../images/icons/history-text.svg');
+      }
+    }
+
+    &--horn {
+      padding: 0 30px 0 55px;
+      border-right: 1px solid $lavender;
+
+      &::before {
+        background-image: url('../images/icons/history-horn.svg');
+      }
+    }
+
+    &--medal {
+      padding-left: 30px;
+
+      &::before {
+        background-image: url('../images/icons/history-medal.svg');
+      }
+    }
+  }
+
+  &__numbers {
+    display: block;
+    font-size: 36px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 1250px) {
+  .history {
+    padding: 50px 0;
+
+    &__wrapper {
+      flex-direction: column-reverse;
+    }
+
+    &__inner {
+      margin: 0 0 50px 0;
+    }
+
+    &__img {
+      object-fit: cover;
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 615px) {
+  .history {
+
+    &__info {
+      flex-direction: column;
+      padding-top: 0;
+    }
+
+    &__item {
+      flex-basis: auto;
+      padding: 20px 0;
+
+      &:not(:first-child) {
+        margin-left: 0;
+      }
+
+      &::before {
+        left: 10%;
+        top: 29px;
+      }
+
+      &--project {
+        border: none;
+        border-bottom: 1px solid $lavender;
+      }
+
+      &--horn {
+        border: none;
+        border-bottom: 1px solid $lavender;
+      }
+    }
+
+    &__years {
+      font-size: calc(100px + (148 - 100) * ((100vw - 320px) / (615 - 320)));
+    }
+
+    &__text {
+      padding-bottom: 20px;
+    }
+  }
+}
