@@ -10,6 +10,10 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
+
+  &__filter {
+    margin-bottom: 80px;
+  }
 }
 
 .card-block {
@@ -87,10 +91,6 @@
     &:hover path {
       fill: $nero;
     }
-  }
-
-  &__filter {
-    margin-bottom: 80px;
   }
 }
 
