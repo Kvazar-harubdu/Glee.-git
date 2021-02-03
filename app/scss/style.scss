@@ -8,6 +8,7 @@
 @import 'components/footer';
 @import 'components/news';
 @import 'components/partners';
+@import 'components/video';
 @import 'components/bread-crumbs';
 
 @import 'index/furniture';
@@ -15,8 +16,236 @@
 @import 'index/gallery';
 @import 'index/decor';
 @import 'index/design';
-@import 'index/history';
-@import 'index/advantage';
-@import 'index/team';
-@import 'index/rule';
-@import 'index/contact';
+
+@import 'about/history';
+@import 'about/advantage';
+@import 'about/team';
+@import 'rule/rule';
+@import 'contact/contact';
+
+
+
+
+
+// .catalog {
+//   padding: 120px 0;
+
+//   &__filter {
+//     max-width: 270px;
+//     width: 100%;
+//   }
+
+//   &__wrapper {
+//     display: flex;
+//     justify-content: space-between;
+//   }
+
+//   &__inner {
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+//     grid-column-gap: 30px;
+//     margin-bottom: 70px;
+//   }
+// }
+
+// .filter-category {
+//   margin-top: -10px;
+//   margin-bottom: 45px;
+
+//   &__title {
+//     margin-bottom: 31px;
+//   }
+
+//   &__input {
+//     @include checkbox;
+
+//     &:checked+.filter-category__checkbox {
+//       background-color: $alice-blue;
+//     }
+//   }
+// }
+
+// .filter-prise {
+//   margin-bottom: 73px;
+
+//   &__label {
+//     display: flex;
+//     justify-content: space-between;
+//     margin-top: 18px;
+//     color: $accent;
+//     @include rubik-400;
+//     font-size: 14px;
+//   }
+
+//   &__title {
+//     margin-bottom: 25px;
+//   }
+
+//   &--symbol {
+//     padding-left: 10px;
+//     position: relative;
+
+//     &::before {
+//       content: "$";
+//       position: absolute;
+//       left: 0;
+//     }
+//   }
+// }
+
+// .irs--flat {
+//   height: 15px;
+//   top: -20px;
+//   cursor: pointer;
+
+//   .irs-line {
+//     top: 26px;
+//     height: 2px;
+//     background-color: $default;
+//     border-radius: 1px;
+//   }
+
+//   .irs-bar {
+//     top: 26px;
+//     height: 3px;
+//     background-color: $default;
+//   }
+
+//   .irs-handle {
+//     top: 20px;
+//     width: 15px;
+//     height: 15px;
+//     background-color: $default;
+//     cursor: pointer;
+
+//     i:first-child {
+//       display: none;
+//     }
+//   }
+
+//   .irs-min,
+//   .irs-max {
+//     display: none;
+//   }
+
+//   .irs-from,
+//   .irs-to,
+//   .irs-single {
+//     display: none;
+//     top: 50px;
+//     background-color: transparent;
+
+
+//     &::before {
+//       display: none;
+//     }
+//   }
+// }
+
+
+
+// .filter-brand {
+//   margin-bottom: 37px;
+
+//   &__title {
+//     margin-bottom: 31px;
+//   }
+
+//   &__input {
+//     @include checkbox;
+
+//     &:checked+.filter-brand__checkbox {
+//       background-color: $alice-blue;
+//     }
+//   }
+// }
+
+// .filter-products {
+
+//   &__title {
+//     margin-bottom: 28px;
+//   }
+
+//   &__img {
+//     width: 70px;
+//     height: 70px;
+//     object-fit: cover;
+//   }
+
+//   &__block {
+//     display: flex;
+
+//     &:not(:last-child) {
+//       margin-bottom: 20px;
+//     }
+//   }
+
+//   &__description {
+//     margin-left: 20px;
+//   }
+
+//   &__link-title {
+//     color: $accent;
+//   }
+
+//   &__name {
+//     @include rubik-400;
+//     margin-top: 5px;
+//     margin-bottom: 10px;
+//     font-size: 14px;
+//     line-height: 1;
+//   }
+
+//   &__prise {
+//     display: block;
+//     margin-top: 5px;
+//   }
+// }
+
+// .filter-products__stars {
+//   padding: 0;
+// }
+
+// .pagination {
+//   display: flex;
+//   justify-content: center;
+
+//   &__direction {
+//     height: 50px;
+//     padding: 0 20px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     border: 1px solid $default;
+//     color: $accent;
+//   }
+
+//   &__prev {
+//     display: none;
+//     margin-right: 15px;
+//   }
+
+//   &__next {
+//     margin-left: 15px;
+//   }
+
+//   &__list {
+//     display: flex;
+//     padding: 0 15px;
+//   }
+
+//   &__item:not(:last-child) {
+//     padding-right: 15px;
+//   }
+
+//   &__link {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 50px;
+//     height: 50px;
+//     border: 1px solid $default;
+//     @include rubik-400;
+//     color: $accent;
+//   }
+// }

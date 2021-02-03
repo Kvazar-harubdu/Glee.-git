@@ -76,16 +76,27 @@
     display: flex;
   }
 
-  &__link:not(:last-child) {
-    margin-right: 5px;
-  }
-  &__social-img {
+  &__link {
+    display: block;
+    width: 41px;
+    height: 41px;
+    @extend %bg-img;
     @include effect-icon;
-  }
-}
 
-@media (max-width: 1250px) {
-  .team {
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+
+    &--inst {
+      background-image: url('../images/icons/team-inst.svg');
+    }
+
+    &--google {
+      background-image: url('../images/icons/team-google.svg');
+    }
+  }
+
+  @media (max-width: $screen-lg) {
     padding-top: 50px;
 
     &__wrapper {

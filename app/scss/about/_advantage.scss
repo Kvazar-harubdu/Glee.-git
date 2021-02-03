@@ -30,7 +30,6 @@
     }
 
     &--car::before {
-      top: 10px;
       background-image: url('../images/advantage-car.svg');
     }
 
@@ -54,10 +53,8 @@
   &__result {
     font-size: 18px;
   }
-}
 
-@media (max-width:640px) {
-  .advantage {
+  @media (max-width: $screen-sm) {
     padding-top: 20px;
 
     &__wrapper {
@@ -69,12 +66,12 @@
       padding-bottom: 30px;
     }
   }
-}
 
-@media (max-width: 458px) {
+  @media (max-width: $screen-xs) {
 
-  .advantage__wrapper {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, 1fr);
+    &__wrapper {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+    }
   }
 }

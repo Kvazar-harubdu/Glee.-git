@@ -66,16 +66,14 @@
     display: block;
     font-weight: 400;
   }
-}
 
-@media (max-width: 1365px) {
-  .support__item:not(:last-child)::after {
-    right: calc(-15% - (-57 + 15) * ((100vw - 320px) / (1365 - 320)));
+  @media (max-width: $screen-xl) {
+    &__item:not(:last-child)::after {
+      right: calc(-15% - (-57 + 15) * ((100vw - 320px) / (1365 - 320)));
+    }
   }
-}
 
-@media (max-width: 960px) {
-  .support {
+  @media (max-width: $screen-md) {
 
     &__wrapper {
       padding: 20px 0;

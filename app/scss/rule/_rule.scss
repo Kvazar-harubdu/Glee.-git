@@ -12,6 +12,10 @@
   &__text:not(:last-child) {
     margin-bottom: 60px;
   }
+
+  @media (max-width: $screen-sm) {
+    padding-top: 50px;
+  }
 }
 
 .table {
@@ -36,11 +40,5 @@
   &__num {
     vertical-align: top;
     padding-right: 9px;
-  }
-}
-
-@media (max-width: 640px) {
-  .rule {
-    padding-top: 50px;
   }
 }

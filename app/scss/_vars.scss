@@ -21,9 +21,13 @@ $lavender: #e6eaf0;
 $white-smoke: #f6f6f6;
 $comet: #565872;
 $trans: all 0.5s ease-in;
-
 $shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
 1px 1px 5px rgba(255, 255, 255, 1);
+$screen-xs: 458px;
+$screen-sm: 640px;
+$screen-md: 992px;
+$screen-lg: 1250px;
+$screen-xl: 1365px;
 
 %bg-img {
   background-repeat: no-repeat;
@@ -170,6 +174,14 @@ $shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
   display: block;
   @include rubik-500;
   font-size: 18px;
+}
+
+@mixin checkbox {
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  position: absolute;
 }
 
 @mixin dmsans-400 {

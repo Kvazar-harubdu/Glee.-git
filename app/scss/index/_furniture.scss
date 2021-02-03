@@ -91,10 +91,8 @@
     @include effect;
     @include path;
   }
-}
 
-@media (max-width: 960px) {
-  .furniture {
+  @media (max-width: $screen-md) {
     &__inner {
       flex-direction: column;
       align-items: center;
@@ -122,4 +120,3 @@
     }
   }
 }
-

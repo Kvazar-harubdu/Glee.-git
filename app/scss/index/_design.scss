@@ -23,9 +23,18 @@
     height: 247px;
     margin-bottom: 34px;
     @include dmsans-700;
-    @include effect;
     background-color: $smoke;
     overflow: hidden;
+  }
+
+  &__link {
+    height: 247px;
+    display: block;
+    @include effect;
+
+    &:hover {
+      background-color: transparent;
+    }
   }
 
   &__caption {
@@ -49,56 +58,8 @@
   &__filter {
     margin-bottom: 69px;
   }
-}
 
-.filter {
-  &__button {
-    @include filter-hover;
-  }
-}
-
-.desing-video {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 500px;
-  @extend %bg-img;
-  background-size: cover;
-
-  path {
-    transition: $trans;
-  }
-
-  &:hover path {
-
-    &:first-child {
-      opacity: 1;
-    }
-
-    &:nth-child(2) {
-      fill: $light-brown;
-    }
-
-    &:last-child {
-      fill: red;
-    }
-  }
-
-  &:focus path {
-    fill: $light-purple;
-
-    &:last-child {
-      fill: red;
-    }
-  }
-
-  &:active path {
-    fill: $seashell;
-  }
-}
-
-@media (max-width: 1250px) {
-  .design {
+  @media (max-width: $screen-lg) {
     padding: 50px 0;
 
     &__inner {
@@ -108,9 +69,5 @@
     &__filter {
       margin-bottom: 50px;
     }
-  }
-
-  .desing-video {
-    min-height: calc(250px + (500 - 250) * ((100vw - 320px) / (1250 - 320)));
   }
 }

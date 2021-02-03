@@ -29,6 +29,25 @@
     }
   }
 
+  &__new-checkbox {
+    background-color: #ebebeb;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+  &__checkbox {
+    @include checkbox;
+
+    &:checked+.contact__new-checkbox {
+      background-image: url('../images/icons/check.svg');
+      @extend %bg-img;
+    }
+  }
+
   &__btn {
     @include contact-btn;
     @include effect;
@@ -64,19 +83,9 @@
     background-color: transparent;
     color: $accent;
   }
-}
 
-@media (max-width: 640px) {
-  .contact {
+  @media (max-width: $screen-sm) {
     padding: 50px 0;
   }
 }
 
-
-.partners-size {
-  height: 250px;
-  background-color: $seashell;
-  display: flex;
-  align-items: center;
-  margin-top: 0;
-}

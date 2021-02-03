@@ -77,6 +77,50 @@
     @include effect;
     color: $gray;
   }
+
+  @media (max-width: $screen-md) {
+    padding-top: 50px;
+
+    &__wrapper {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    &__info {
+      padding-right: 15px;
+    }
+
+    &__item {
+      margin-bottom: 21px;
+    }
+
+    &__link {
+      padding: 13px 7px 13px 0;
+    }
+
+    &__copy-link {
+      padding: 15px 7px;
+    }
+  }
+
+  @media (max-width: $screen-sm) {
+    &__copy {
+      flex-direction: column;
+      padding: 10px 0;
+    }
+
+    &__copy-text {
+      padding-bottom: 15px;
+    }
+
+    &__copy-section {
+      padding-left: 5px;
+
+      &:not(:last-child) {
+        padding-right: 5px;
+      }
+    }
+  }
 }
 
 .address {
@@ -92,6 +136,12 @@
 
   &__name {
     text-transform: uppercase;
+  }
+
+  @media (max-width: $screen-md) {
+    &__link {
+      padding: 9px 0;
+    }
   }
 }
 
@@ -130,30 +180,14 @@
     color: #fff;
     background-color: $default;
   }
-}
 
-@media (max-width: 960px) {
-  .footer {
-    padding-top: 50px;
-
-    &__wrapper {
-      flex-wrap: wrap;
-      justify-content: flex-start;
+  @media (max-width: $screen-md) {
+    &__email {
+      height: 45px;
     }
 
-    &__info {
-      padding-right: 15px;
+    &__btn {
+      height: 45px;
     }
-  }
-}
-
-@media (max-width: 640px) {
-  .footer__copy {
-    flex-direction: column;
-    padding: 10px 0;
-  }
-
-  .footer__copy-text {
-    padding-bottom: 15px;
   }
 }

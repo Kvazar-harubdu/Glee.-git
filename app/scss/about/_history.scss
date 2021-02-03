@@ -54,7 +54,7 @@
   }
 
   &__item {
-    flex-basis: calc(570px/3);
+    flex-basis: 190px;
     @include dmsans-700;
     display: block;
     text-align: center;
@@ -105,10 +105,8 @@
     line-height: 1;
     text-transform: uppercase;
   }
-}
 
-@media (max-width: 1250px) {
-  .history {
+  @media (max-width: $screen-lg) {
     padding: 50px 0;
 
     &__wrapper {
@@ -124,11 +122,8 @@
       margin: 0;
     }
   }
-}
 
-@media (max-width: 615px) {
-  .history {
-
+  @media (max-width: $screen-sm) {
     &__info {
       flex-direction: column;
       padding-top: 0;
@@ -159,7 +154,7 @@
     }
 
     &__years {
-      font-size: calc(100px + (148 - 100) * ((100vw - 320px) / (615 - 320)));
+      font-size: calc(100px + (148 - 100) * ((100vw - 320px) / (640 - 320)));
     }
 
     &__text {

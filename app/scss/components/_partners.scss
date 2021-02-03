@@ -4,6 +4,7 @@
   padding: 160px 10px 90px;
   background-color: $seashell;
 
+
   &__wrapper {
     margin-top: 105px;
   }
@@ -14,13 +15,24 @@
     justify-content: center;
   }
 
+  &__item {
+    margin: auto 0;
+  }
+
   &__img {
     margin: 0 auto;
+    object-fit: cover;
+  }
+
+  @media (max-width: $screen-lg) {
+    margin-top: -190px;
+
   }
 }
 
-@media (max-width:1250px) {
-  .partners {
-    margin-top: -190px;
-  }
+.partners--size {
+  height: 250px;
+  margin-top: 0;
+  padding-top: 85px;
+  margin-bottom: -10px;
 }

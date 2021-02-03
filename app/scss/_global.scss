@@ -31,6 +31,10 @@ body {
   color: $nero;
   font-size: 36px;
   @include dmsans-700;
+
+  @media (max-width: 640px) {
+    font-size: calc(24px + (36 - 24) * ((100vw - 320px) / (640 - 320)));
+  }
 }
 
 .button {
@@ -64,26 +68,55 @@ body {
   &__item:not(:last-child) {
     margin-right: 19px;
   }
-}
 
-@media (max-width: 615px) {
-  .title {
-    font-size: calc(24px + (36 - 24) * ((100vw - 320px) / (615 - 320)));
+  &__btn,
+  &__button {
+    @include filter-hover;
   }
-}
 
-@media (max-width: 458px) {
-  .filter {
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom: 50px;
+  @media (max-width: $screen-md) {
+    overflow-x: auto;
 
-    &__item {
-      margin-bottom: 20px;
+    &__btn,
+    &__button {
+      padding: 8px 12px;
 
-      &:not(:last-child) {
-        margin-right: 10px;
+      &:hover {
+        transform: translateY(0);
       }
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 2px;
     }
   }
 }
+
+// .filter--title {
+//   position: relative;
+//   text-transform: uppercase;
+//   @include dmsans-700;
+//   font-size: 18px;
+//   color: $accent;
+
+//   &::after {
+//     @extend %before;
+//     width: 38px;
+//     height: 2px;
+//     border-radius: 1px;
+//     background-color: $default;
+//     margin-left: 17px;
+//     top: 50%;
+//   }
+// }
+
+// .filter-checkbox {
+//   @include rubik-400;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-start;
+//   height: 42px;
+//   padding: 0 23px 0 16px;
+//   border-radius: 5px;
+//   cursor: pointer;
+// }
