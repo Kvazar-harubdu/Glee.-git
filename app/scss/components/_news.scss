@@ -2,17 +2,29 @@
   padding-top: 100px;
   min-height: 500px;
 
+  @include _640 {
+    padding-top: 50px;
+  }
+
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 37px;
+
+    @include _640 {
+      flex-direction: column;
+    }
   }
 
   &__btn {
     padding: 3px;
     color: $raising-black;
     @include effect;
+
+    @include _992 {
+      padding: 7px 5px;
+    }
 
     &::after {
       padding-left: 19px;
@@ -23,39 +35,28 @@
   &__inner {
     display: flex;
     justify-content: space-between;
-  }
 
-  @media (max-width: $screen-lg) {
-
-    &__inner {
+    @include _1250 {
       flex-wrap: wrap;
       justify-content: space-around;
       align-items: center;
     }
-  }
-
-  @media (max-width: $screen-md) {
-    &__btn {
-      padding: 7px 5px;
-    }
-  }
-
-  @media (max-width: $screen-sm) {
-    padding-top: 50px;
-
-    &__top {
-      flex-direction: column;
-    }
 
     &__title {
-      margin-bottom: 10px;
+      @include _640 {
+        margin-bottom: 10px;
+      }
     }
   }
 }
 
-.article {
+.article-card {
   max-width: 370px;
   min-height: 420px;
+
+  @include _1250 {
+    margin-bottom: 20px;
+  }
 
   &__content {
     display: flex;
@@ -97,6 +98,10 @@
     font-size: 18px;
     line-height: 1.2;
     color: $raising-black;
+
+    @include _640 {
+      font-size: calc(14px + 4 * ((100vw - 320px) / 320));
+    }
   }
 
   &__info {
@@ -108,13 +113,18 @@
   &__data {
     position: relative;
     @include article;
-    padding: 0 41px 0 15px;
+    margin-right: 30px;
+    padding-left: 15px;
+
+    @include _640 {
+      display: block;
+    }
 
     &::before {
       @extend %before;
       width: 15px;
       height: 15px;
-      left: 0px;
+      left: 0;
       bottom: 0;
       background-image: url('../images/icons/calendar.svg');
     }
@@ -122,34 +132,25 @@
 
   &__author {
     position: relative;
+    padding-left: 15px;
     @include article;
+    @include effect;
+
+    @include _640 {
+      padding: 10px 17px 17px;
+    }
 
     &::before {
       @extend %before;
       background-image: url('../images/icons/author.svg');
-      left: -17px;
+      left: 0;
       bottom: 0;
       width: 15px;
       height: 15px;
-    }
-  }
 
-  @media (max-width: $screen-lg) {
-    margin-bottom: 20px;
-  }
-
-  @media (max-width: $screen-sm) {
-
-    &__descr {
-      font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (640 - 320)));
-    }
-
-    &__data {
-      display: block;
-    }
-
-    &__author {
-      margin-left: 15px;
+      @include _640 {
+        bottom: 18px;
+      }
     }
   }
 }

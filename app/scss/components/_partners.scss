@@ -4,6 +4,10 @@
   padding: 160px 10px 90px;
   background-color: $seashell;
 
+  @include _1250 {
+    margin-top: -190px;
+  }
+
 
   &__wrapper {
     margin-top: 105px;
@@ -24,15 +28,10 @@
     object-fit: cover;
   }
 
-  @media (max-width: $screen-lg) {
-    margin-top: -190px;
-
+  &--size {
+    height: 250px;
+    margin-top: 0;
+    padding-top: 85px;
+    margin-bottom: -10px;
   }
-}
-
-.partners--size {
-  height: 250px;
-  margin-top: 0;
-  padding-top: 85px;
-  margin-bottom: -10px;
 }

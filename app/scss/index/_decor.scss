@@ -1,10 +1,19 @@
 .decor {
   padding-top: 140px;
 
+  @include _640 {
+    padding-top: 50px;
+  }
+
   &__wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 30px;
+
+    @include _1365 {
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__item {
@@ -12,13 +21,38 @@
     justify-content: center;
     background-color: $linen;
     height: 390px;
-  }
 
-  &__images {}
+    @include _1365 {
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    @include _640 {
+      height: auto;
+    }
+
+    @include _458 {
+      flex-direction: column;
+    }
+
+    &:not(:last-child) {
+      @include _1365 {
+        margin-bottom: 110px;
+      }
+
+      @include _640 {
+        margin-bottom: 20px;
+      }
+    }
+  }
 
   &__img {
     object-fit: cover;
     transform: translate(35px, -100px);
+
+    @include _640 {
+      transform: translateX(-10px);
+    }
   }
 
   &__inner {
@@ -28,6 +62,11 @@
     max-width: 378px;
     margin-left: 60px;
     padding-right: 15px;
+
+    @include _640 {
+      margin: 0;
+      padding: 20px 10px;
+    }
   }
 
   &__title {
@@ -36,12 +75,20 @@
     font-size: 26px;
     line-height: 1.2;
     margin-bottom: 15px;
+
+    @include _640 {
+      font-size: calc(20px + 6 * ((100vw - 320px) / 320));
+    }
   }
 
   &__text {
     @include rubik-400;
     margin-bottom: 30px;
     max-width: 360px;
+
+    @include _640 {
+      font-size: calc(14px + 2 * ((100vw - 320px) / 320));
+    }
   }
 
   &__btn {
@@ -51,57 +98,5 @@
     color: $dark-blue;
     border: 1px solid $accent;
     @include path;
-  }
-
-  @media (max-width: $screen-xl) {
-
-    &__wrapper {
-      grid-template-rows: repeat(2, 1fr);
-      grid-template-columns: repeat(1, 1fr);
-    }
-
-    &__item {
-      justify-content: space-around;
-      align-items: center;
-
-      &:not(:last-child) {
-        margin-bottom: 110px;
-      }
-    }
-  }
-
-  @media (max-width: $screen-sm) {
-    padding-top: 50px;
-
-    &__item {
-      height: auto;
-
-      &:not(:last-child) {
-        margin-bottom: 20px;
-      }
-    }
-
-    &__img {
-      transform: translateX(-10px);
-    }
-
-    &__inner {
-      margin: 0;
-      padding: 20px 10px;
-    }
-
-    &__title {
-      font-size: calc(20px + (26 - 20) * ((100vw - 320px) / (640 - 320)));
-    }
-
-    &__text {
-      font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (640 - 320)));
-    }
-  }
-
-  @media (max-width: $screen-xs) {
-    &__item {
-      flex-direction: column;
-    }
   }
 }

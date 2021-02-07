@@ -10,6 +10,7 @@
 @import 'components/partners';
 @import 'components/video';
 @import 'components/bread-crumbs';
+@import 'components/pagination';
 
 @import 'index/furniture';
 @import 'index/support';
@@ -23,229 +24,168 @@
 @import 'rule/rule';
 @import 'contact/contact';
 
+@import 'catalog/catalog-filter';
+@import 'catalog/catalog-card';
 
 
 
 
-// .catalog {
-//   padding: 120px 0;
-
-//   &__filter {
-//     max-width: 270px;
-//     width: 100%;
-//   }
-
-//   &__wrapper {
-//     display: flex;
-//     justify-content: space-between;
-//   }
-
-//   &__inner {
-//     display: grid;
-//     grid-template-columns: repeat(3, 1fr);
-//     grid-column-gap: 30px;
-//     margin-bottom: 70px;
-//   }
-// }
-
-// .filter-category {
-//   margin-top: -10px;
-//   margin-bottom: 45px;
-
-//   &__title {
-//     margin-bottom: 31px;
-//   }
-
-//   &__input {
-//     @include checkbox;
-
-//     &:checked+.filter-category__checkbox {
-//       background-color: $alice-blue;
-//     }
-//   }
-// }
-
-// .filter-prise {
-//   margin-bottom: 73px;
-
-//   &__label {
-//     display: flex;
-//     justify-content: space-between;
-//     margin-top: 18px;
-//     color: $accent;
-//     @include rubik-400;
-//     font-size: 14px;
-//   }
-
-//   &__title {
-//     margin-bottom: 25px;
-//   }
-
-//   &--symbol {
-//     padding-left: 10px;
-//     position: relative;
-
-//     &::before {
-//       content: "$";
-//       position: absolute;
-//       left: 0;
-//     }
-//   }
-// }
-
-// .irs--flat {
-//   height: 15px;
-//   top: -20px;
-//   cursor: pointer;
-
-//   .irs-line {
-//     top: 26px;
-//     height: 2px;
-//     background-color: $default;
-//     border-radius: 1px;
-//   }
-
-//   .irs-bar {
-//     top: 26px;
-//     height: 3px;
-//     background-color: $default;
-//   }
-
-//   .irs-handle {
-//     top: 20px;
-//     width: 15px;
-//     height: 15px;
-//     background-color: $default;
-//     cursor: pointer;
-
-//     i:first-child {
-//       display: none;
-//     }
-//   }
-
-//   .irs-min,
-//   .irs-max {
-//     display: none;
-//   }
-
-//   .irs-from,
-//   .irs-to,
-//   .irs-single {
-//     display: none;
-//     top: 50px;
-//     background-color: transparent;
 
 
-//     &::before {
-//       display: none;
-//     }
-//   }
-// }
+.product {
+  padding: 120px 0 96px;
 
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
 
+  &__img-box {
+    // display: flex;
+    width: 570px;
 
-// .filter-brand {
-//   margin-bottom: 37px;
+  }
 
-//   &__title {
-//     margin-bottom: 31px;
-//   }
+  &__small-img {
+    width: 138px;
+    height: 170px;
+    cursor: pointer;
+  }
 
-//   &__input {
-//     @include checkbox;
+  &__img-littel {
+    width: 138px;
+    height: 170px;
+    object-fit: cover;
+  }
 
-//     &:checked+.filter-brand__checkbox {
-//       background-color: $alice-blue;
-//     }
-//   }
-// }
+  &__big-img {
+    max-width: 387px;
+    min-height: 500px;
+  }
 
-// .filter-products {
+  &__king-size {
+    max-width: 387px;
+    min-height: 500px;
+    object-fit: cover;
+  }
 
-//   &__title {
-//     margin-bottom: 28px;
-//   }
+  &__small-slider {
+    margin: 0 5px 25px 0;
+  }
 
-//   &__img {
-//     width: 70px;
-//     height: 70px;
-//     object-fit: cover;
-//   }
+  &__content {
+    margin-top: 10px;
+    margin-left: 46px;
+    max-width: 570px;
+  }
 
-//   &__block {
-//     display: flex;
+  .card-block__caption {
+    @include rubik-400;
+    font-size: 40px;
+  }
 
-//     &:not(:last-child) {
-//       margin-bottom: 20px;
-//     }
-//   }
+  .card-block__stars {
+    display: block;
+    margin-bottom: 27px;
+    margin-left: -5px;
+  }
 
-//   &__description {
-//     margin-left: 20px;
-//   }
+  .card-block__price {
+    display: block;
+    font-size: 30px;
+    color: $accent;
+    margin-bottom: 15px;
+  }
 
-//   &__link-title {
-//     color: $accent;
-//   }
+  .card-block__descr {
+    display: block;
+    margin-bottom: -8px;
+  }
 
-//   &__name {
-//     @include rubik-400;
-//     margin-top: 5px;
-//     margin-bottom: 10px;
-//     font-size: 14px;
-//     line-height: 1;
-//   }
+  &__form {
+    margin-bottom: 59px;
+  }
 
-//   &__prise {
-//     display: block;
-//     margin-top: 5px;
-//   }
-// }
+  &__number {
+    // text-align: center;
+  }
 
-// .filter-products__stars {
-//   padding: 0;
-// }
+ 
+  &__btn {
+    display: inline-block;
+    width: 208px;
+    height: 53px;
+    // margin-left: 15px;
+    background-color: $default;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    text-transform: uppercase;
+    @include rubik-400;
+    color: #fff;
+    @include effect;
+  }
 
-// .pagination {
-//   display: flex;
-//   justify-content: center;
+  &__item {
+    @include rubik-400;
+  }
 
-//   &__direction {
-//     height: 50px;
-//     padding: 0 20px;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     border: 1px solid $default;
-//     color: $accent;
-//   }
+  &__id {
+    color: inherit;
+  }
 
-//   &__prev {
-//     display: none;
-//     margin-right: 15px;
-//   }
+  &__box-link {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
 
-//   &__next {
-//     margin-left: 15px;
-//   }
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 241px;
+    height: 53px;
+    font-size: 18px;
+    @include rubik-500;
+    @include effect;
+    background-color: $alice-blue;
+    border-radius: 5px;
+    color: $accent;
 
-//   &__list {
-//     display: flex;
-//     padding: 0 15px;
-//   }
+    &:hover {
+      border: transparent;
+      background-color: $default;
+      color: #fff;
+    }
 
-//   &__item:not(:last-child) {
-//     padding-right: 15px;
-//   }
+    &:not(:last-child) {
+      margin-right: 13px;
+    }
+  }
 
-//   &__link {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     width: 50px;
-//     height: 50px;
-//     border: 1px solid $default;
-//     @include rubik-400;
-//     color: $accent;
-//   }
-// }
+  &__text {
+    @include rubik-400;
+  }
+}
+
+ .jq-number__field {
+   text-align: center;
+   width: 100px;
+   border: 1px solid $default;
+   border-bottom-color: $default;
+   border-radius: 0;
+   box-shadow: transparent;
+ }
+
+ .jq-number__field input {
+   width: 100%;
+   padding: 16px 9px;
+   border: none;
+   outline: none;
+   background: none;
+   font-size: 15px;
+   text-align: center;
+   @include rubik-400;
+   color: #333;
+ }

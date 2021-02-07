@@ -1,6 +1,10 @@
 .design {
   padding: 88px 0 80px;
 
+  @include _1250 {
+    padding: 50px 0;
+  }
+
   &__title {
     margin-bottom: 9px;
     text-align: center;
@@ -10,7 +14,29 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    @include _1250 {
+      justify-content: space-around;
+    }
   }
+
+  &__filter {
+    margin-bottom: 69px;
+
+    @include _1250 {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+
+.design-card {
+  flex-basis: 370px;
+  height: 247px;
+  margin-bottom: 34px;
+  @include dmsans-700;
+  background-color: $smoke;
+  overflow: hidden;
 
   &__descr {
     position: relative;
@@ -18,14 +44,6 @@
     z-index: 5;
   }
 
-  &__card {
-    flex-basis: 370px;
-    height: 247px;
-    margin-bottom: 34px;
-    @include dmsans-700;
-    background-color: $smoke;
-    overflow: hidden;
-  }
 
   &__link {
     height: 247px;
@@ -53,21 +71,5 @@
 
   &__style {
     color: $default;
-  }
-
-  &__filter {
-    margin-bottom: 69px;
-  }
-
-  @media (max-width: $screen-lg) {
-    padding: 50px 0;
-
-    &__inner {
-      justify-content: space-around;
-    }
-
-    &__filter {
-      margin-bottom: 50px;
-    }
   }
 }

@@ -6,6 +6,13 @@
     grid-template-columns: repeat(3, 1fr);
     min-height: 170px;
     background-color: $seashell;
+
+    @include _992 {
+      padding: 20px 0;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(1, 1fr);
+      grid-row-gap: 50px;
+    }
   }
 
   &__item {
@@ -21,6 +28,10 @@
       height: 55px;
       left: -30px;
       top: 10px;
+
+      @include _992 {
+        left: -5px;
+      }
     }
 
     &:not(:last-child) {
@@ -33,6 +44,14 @@
         right: calc(-57% + 1px);
         transform: translateY(-50%);
         background-color: $pampas;
+
+        @include _1365 {
+          right: -5%;
+        }
+
+        @include _992 {
+          display: none;
+        }
       }
     }
 
@@ -65,32 +84,5 @@
   &__text {
     display: block;
     font-weight: 400;
-  }
-
-  @media (max-width: $screen-xl) {
-    &__item:not(:last-child)::after {
-      right: calc(-15% - (-57 + 15) * ((100vw - 320px) / (1365 - 320)));
-    }
-  }
-
-  @media (max-width: $screen-md) {
-
-    &__wrapper {
-      padding: 20px 0;
-      grid-template-rows: repeat(3, 1fr);
-      grid-template-columns: repeat(1, 1fr);
-      grid-row-gap: 50px;
-    }
-
-    &__item {
-
-      &:not(:last-child)::after {
-        display: none;
-      }
-
-      &::before {
-        left: -5px;
-      }
-    }
   }
 }

@@ -1,16 +1,35 @@
 .history {
   padding: 120px 0;
 
+  @include _1250 {
+    padding: 50px 0;
+  }
+
   &__wrapper {
     display: flex;
+
+    @include _1250 {
+      flex-direction: column-reverse;
+    }
   }
 
   &__img {
+    max-width: 570px;
+    min-height: 675px;
+    object-fit: cover;
     margin-right: 48px;
+
+    @include _1250 {
+      margin-right: 0;
+    }
   }
 
   &__inner {
     margin-top: 65px;
+
+    @include _1250 {
+      margin: 0 0 50px 0;
+    }
   }
 
   &__time {
@@ -24,6 +43,10 @@
     font-size: 148px;
     line-height: 1;
     margin-right: 15px;
+
+    @include _640 {
+      font-size: calc(100px + 48 * ((100vw - 320px) / 320));
+    }
   }
 
   &__skills {
@@ -46,11 +69,20 @@
     padding-bottom: 60px;
     line-height: 1.9;
     border-bottom: 1px solid $lavender;
+
+    @include _640 {
+      padding-bottom: 20px;
+    }
   }
 
   &__info {
     display: flex;
     padding-top: 38px;
+
+    @include _640 {
+      flex-direction: column;
+      padding-top: 0;
+    }
   }
 
   &__item {
@@ -60,8 +92,17 @@
     text-align: center;
     position: relative;
 
+    @include _640 {
+      flex-basis: auto;
+      padding: 20px 0;
+    }
+
     &:not(:first-child) {
       margin-left: 25px;
+
+      @include _640 {
+        margin-left: 0;
+      }
     }
 
     &::before {
@@ -70,11 +111,21 @@
       top: 9px;
       width: 43px;
       height: 40px;
+
+      @include _640 {
+        left: 10%;
+        top: 29px;
+      }
     }
 
     &--project {
       padding: 0 25px 0 55px;
       border-right: 1px solid $lavender;
+
+      @include _640 {
+        border: none;
+        border-bottom: 1px solid $lavender;
+      }
 
       &::before {
         background-image: url('../images/icons/history-text.svg');
@@ -84,6 +135,11 @@
     &--horn {
       padding: 0 30px 0 55px;
       border-right: 1px solid $lavender;
+
+      @include _640 {
+        border: none;
+        border-bottom: 1px solid $lavender;
+      }
 
       &::before {
         background-image: url('../images/icons/history-horn.svg');
@@ -104,61 +160,5 @@
     font-size: 36px;
     line-height: 1;
     text-transform: uppercase;
-  }
-
-  @media (max-width: $screen-lg) {
-    padding: 50px 0;
-
-    &__wrapper {
-      flex-direction: column-reverse;
-    }
-
-    &__inner {
-      margin: 0 0 50px 0;
-    }
-
-    &__img {
-      object-fit: cover;
-      margin: 0;
-    }
-  }
-
-  @media (max-width: $screen-sm) {
-    &__info {
-      flex-direction: column;
-      padding-top: 0;
-    }
-
-    &__item {
-      flex-basis: auto;
-      padding: 20px 0;
-
-      &:not(:first-child) {
-        margin-left: 0;
-      }
-
-      &::before {
-        left: 10%;
-        top: 29px;
-      }
-
-      &--project {
-        border: none;
-        border-bottom: 1px solid $lavender;
-      }
-
-      &--horn {
-        border: none;
-        border-bottom: 1px solid $lavender;
-      }
-    }
-
-    &__years {
-      font-size: calc(100px + (148 - 100) * ((100vw - 320px) / (640 - 320)));
-    }
-
-    &__text {
-      padding-bottom: 20px;
-    }
   }
 }

@@ -6,6 +6,10 @@
   @extend %bg-img;
   background-size: cover;
 
+  @include _1250 {
+    min-height: calc(250px +  250 * ((100vw - 320px) / 320));
+  }
+
   path {
     transition: $trans;
   }
@@ -35,9 +39,5 @@
 
   &:active path {
     fill: $seashell;
-  }
-
-  @media (max-width: $screen-lg) {
-    min-height: calc(250px + (500 - 250) * ((100vw - 320px) / (1250 - 320)));
   }
 }

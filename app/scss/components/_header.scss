@@ -13,10 +13,8 @@
     left: 0;
     top: 0;
     transform: translateY(-50%);
-  }
 
-  @media (max-width: $screen-lg) {
-    &__logo {
+    @include _1250 {
       z-index: 15;
     }
   }
@@ -25,12 +23,51 @@
 .menu {
   transform: translateY(-15px);
 
-  &__list {
-    display: flex;
+  @include _1250 {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
   }
 
-  &__item:not(:last-child) {
-    margin-right: 24px;
+  &__list {
+    display: block;
+
+    @include _1250 {
+      position: absolute;
+      display: block;
+      text-align: center;
+      width: 60%;
+      top: -1000%;
+      right: 20%;
+      transition: $trans;
+    }
+
+    &--active {
+      @include _1250 {
+        top: 50px;
+      }
+
+      @include _640 {
+        top: 100px;
+      }
+    }
+  }
+
+  &__item {
+    @include _1250 {
+      background-color: $pampas;
+      border-radius: 25px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 24px;
+
+      @include _1250 {
+        margin: 0;
+        margin-bottom: 10px;
+      }
+    }
   }
 
   &__link {
@@ -41,11 +78,20 @@
     font-size: 15px;
     @include focus-text;
 
+    @include _1250 {
+      display: block;
+      padding: 10px 0;
+    }
+
     &::before {
       @extend %menu-before;
       border-top: 1px solid $accent;
       border-bottom: 1px solid $accent;
       transform: scaleY(2);
+
+      @include _1250 {
+        display: none;
+      }
     }
 
     &::after {
@@ -53,70 +99,29 @@
       background-color: $accent;
       transform: scaleY(0);
       transition: 0.5s;
+
+      @include _1250 {
+        display: none;
+      }
     }
 
     &:hover {
       color: #fff;
+
+      @include _1250 {
+        color: $nero;
+      }
+    }
+
+    &:focus {
+      @include _1250 {
+        border-radius: 25px;
+      }
     }
 
     &:hover::before,
     &:hover::after {
       @extend %menu-hover;
-    }
-  }
-
-  @media (max-width: $screen-lg) {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-
-    &__list {
-      position: absolute;
-      display: block;
-      text-align: center;
-      width: 60%;
-      top: -1000%;
-      right: 20%;
-      transition: $trans;
-
-      &--active {
-        top: 50px;
-      }
-    }
-
-    &__item {
-      background-color: $pampas;
-      border-radius: 25px;
-
-      &:not(:last-child) {
-        margin: 0;
-        margin-bottom: 10px;
-      }
-    }
-
-    &__link {
-      display: block;
-      padding: 10px 0;
-
-      &::before,
-      &::after {
-        display: none;
-      }
-
-      &:hover {
-        color: $nero;
-      }
-
-      &:focus {
-        border-radius: 25px;
-      }
-    }
-  }
-
-  @media (max-width: $screen-sm) {
-    &__list--active {
-      top: 100px;
     }
   }
 
@@ -128,13 +133,14 @@
 }
 
 .burger-menu {
-  display: none;
   position: relative;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 50px;
   height: 50px;
   padding: 0;
+  margin: 0;
   @include effect-icon;
   background-color: $default;
   border: 1px solid $accent;
@@ -144,6 +150,16 @@
   overflow: hidden;
   cursor: pointer;
   z-index: 10;
+  display: none;
+
+  @include _1250 {
+    display: flex;
+  }
+
+  @include _640 {
+    right: -85%;
+    transform: translateY(-20%);
+  }
 
   &__btn {
     display: block;
@@ -158,6 +174,7 @@
       @extend %before;
       width: 30px;
       height: 4px;
+      left: 19%;
       border-radius: 5px;
       background-color: $accent;
       box-shadow: 0 1px 3px $light-brown;
@@ -175,7 +192,7 @@
   &--open .burger-menu__btn {
     background: transparent;
     box-shadow: none;
-    transform: translateX(-20px);
+    transform: translateX(-26px);
 
     &::before {
       transform: rotate(45deg) translate(15px, -15px);
@@ -185,16 +202,6 @@
       transform: rotate(-45deg) translate(15px, 15px);
     }
   }
-
-  @media (max-width: $screen-lg) {
-    display: flex;
-  }
-
-  @media (max-width: $screen-sm) {
-    right: -85%;
-    transform: translateY(-20%);
-  }
-
 }
 
 .user-menu {
@@ -207,6 +214,12 @@
   transform: translateY(-50%);
   @extend %bg-img;
   z-index: 15;
+
+  @include _640 {
+    top: 65%;
+    left: -5%;
+    transform: scale(0.9);
+  }
 
   &__icon {
     display: flex;
@@ -229,6 +242,10 @@
       border-top-left-radius: 25px;
       border-bottom-left-radius: 25px;
 
+      @include _640 {
+        margin-left: 5px;
+      }
+
       &::before {
         content: "";
         position: absolute;
@@ -245,6 +262,10 @@
       margin-right: 18px;
       border-top-right-radius: 25px;
       border-bottom-right-radius: 25px;
+
+      @include _640 {
+        margin-right: 5px;
+      }
     }
 
     &:hover .user-menu__path {
@@ -271,21 +292,5 @@
     background-color: #fff;
     border-radius: 50%;
     z-index: 5;
-  }
-
-  @media (max-width: $screen-sm) {
-    top: 65%;
-    left: -5%;
-    transform: scale(0.9);
-
-    &__icon {
-      &--circle-left {
-        margin-left: 5px;
-      }
-
-      &--circle-right {
-        margin-right: 5px;
-      }
-    }
   }
 }

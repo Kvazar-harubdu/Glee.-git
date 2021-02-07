@@ -46,6 +46,13 @@
     justify-content: space-between;
     flex-basis: 1200px;
     min-height: 820px;
+
+    @include _992 {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(350px + (820 - 350) * ((100vh - 320px) / (992 -320)));
+    }
   }
 
   &__item {
@@ -55,15 +62,24 @@
 
   &__title {
     @include rubik-500;
-    padding-top: 220px;
     margin-bottom: 20px;
     font-size: 72px;
     line-height: 1;
     text-transform: uppercase;
+
+    @include _992 {
+      font-size: calc(25px + 42 * ((100vw - 320px) /  320));
+    }
   }
 
   &__descr {
     max-width: 450px;
+    padding-top: 220px;
+
+    @include _992 {
+      padding-top: 40px;
+      text-align: center;
+    }
   }
 
   &__box {
@@ -82,6 +98,11 @@
     font-size: 18px;
     line-height: 1.6;
     color: $dark-blue;
+
+    @include _992 {
+      margin: 0 auto 40px;
+      font-size: calc(14px + 4 * ((100vw - 320px) / 320));
+    }
   }
 
   &__btn {
@@ -90,33 +111,9 @@
     color: #fff;
     @include effect;
     @include path;
-  }
 
-  @media (max-width: $screen-md) {
-    &__inner {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: calc(350px + (820 - 350) * ((100vh - 320px) / (960 -320)));
-    }
-
-    &__descr {
-      text-align: center;
-    }
-
-    &__title {
-      padding-top: 40px;
-      font-size: calc(30px + (72 - 30) * ((100vw - 320px) / (960 - 320)));
-    }
-
-    &__text {
-      margin: 0 auto 40px;
-      font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (960 - 320)));
-    }
-
-    &__btn {
+    @include _992 {
       margin: 0 auto;
-      width: calc(120px + (200 - 100) * ((100vw - 320px) / (960 - 320)));
     }
   }
 }

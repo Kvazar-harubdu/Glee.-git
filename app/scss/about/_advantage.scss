@@ -3,6 +3,10 @@
   min-height: 320px;
   padding-top: 84px;
 
+  @include _640 {
+    padding-top: 20px;
+  }
+
   &__wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -10,11 +14,25 @@
     color: $accent;
     @include dmsans-700;
     text-align: center;
+
+    @include _640 {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    @include _458 {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+    }
   }
 
   &__item {
     padding-top: 64px;
     position: relative;
+
+    @include _640 {
+      padding-bottom: 30px;
+    }
 
     &::before {
       @extend %before;
@@ -52,26 +70,5 @@
 
   &__result {
     font-size: 18px;
-  }
-
-  @media (max-width: $screen-sm) {
-    padding-top: 20px;
-
-    &__wrapper {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-    }
-
-    &__item {
-      padding-bottom: 30px;
-    }
-  }
-
-  @media (max-width: $screen-xs) {
-
-    &__wrapper {
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-rows: repeat(1, 1fr);
-    }
   }
 }

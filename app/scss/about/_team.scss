@@ -2,13 +2,26 @@
   padding-top: 120px;
   margin-bottom: -40px;
 
+  @include _1250 {
+    padding-top: 50px;
+  }
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
+
+    @include _1250 {
+      flex-direction: column;
+    }
   }
 
   &__description {
     max-width: 303px;
+
+    @include _1250 {
+      max-width: 100%;
+      margin-bottom: 25px;
+    }
   }
 
   &__title {
@@ -22,7 +35,7 @@
   }
 
   &__btn {
-    width: 170px;
+    max-width: 170px;
     height: 50px;
     @include popins-500;
     @include effect;
@@ -38,10 +51,21 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin-left: 95px;
+
+    @include _1250 {
+      justify-content: space-around;
+      margin: 0;
+    }
   }
 
   &__item {
     margin-bottom: -10px;
+  }
+
+  &__images {
+    max-width: 370px;
+    min-height: 320px;
+    object-fit: cover;
   }
 
   &__info {
@@ -85,32 +109,6 @@
 
     &:not(:last-child) {
       margin-right: 5px;
-    }
-
-    &--inst {
-      background-image: url('../images/icons/team-inst.svg');
-    }
-
-    &--google {
-      background-image: url('../images/icons/team-google.svg');
-    }
-  }
-
-  @media (max-width: $screen-lg) {
-    padding-top: 50px;
-
-    &__wrapper {
-      flex-direction: column;
-    }
-
-    &__description {
-      max-width: 100%;
-      margin-bottom: 25px;
-    }
-
-    &__block {
-      justify-content: space-around;
-      margin: 0;
     }
   }
 }

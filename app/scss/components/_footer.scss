@@ -4,11 +4,20 @@
   font-size: 14px;
   color: $gray;
 
+  @include _992 {
+    padding-top: 50px;
+  }
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
     padding-bottom: 60px;
     border-bottom: 1px solid $default;
+
+    @include _992 {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
   }
 
   &__block {
@@ -29,13 +38,27 @@
     @include dmsans-700;
   }
 
+  &__info {
+    @include _992 {
+      padding-right: 15px;
+    }
+  }
+
   &__item {
     margin-bottom: 7px;
+
+    @include _992 {
+      margin-bottom: 21px;
+    }
   }
 
   &__link {
     @include effect;
     color: $gray;
+
+    @include _992 {
+      padding: 13px 7px 13px 0;
+    }
   }
 
   &__list {
@@ -58,67 +81,46 @@
     min-height: 80px;
     font-size: 14px;
     line-height: 1;
+
+    @include _640 {
+      flex-direction: column;
+      padding: 10px 0;
+    }
   }
 
   &__copy-list {
     display: flex;
   }
 
+  &__copy-text {
+    @include _640 {
+      padding-bottom: 15px;
+    }
+  }
+
   &__copy-section {
     padding-left: 17px;
+
+    @include _640 {
+      padding-left: 5px;
+    }
 
     &:not(:last-child) {
       border-right: 1px solid $gray;
       padding-right: 17px;
+
+      @include _640 {
+        padding-right: 5px;
+      }
     }
   }
 
   &__copy-link {
     @include effect;
     color: $gray;
-  }
 
-  @media (max-width: $screen-md) {
-    padding-top: 50px;
-
-    &__wrapper {
-      flex-wrap: wrap;
-      justify-content: flex-start;
-    }
-
-    &__info {
-      padding-right: 15px;
-    }
-
-    &__item {
-      margin-bottom: 21px;
-    }
-
-    &__link {
-      padding: 13px 7px 13px 0;
-    }
-
-    &__copy-link {
+    @include _992 {
       padding: 15px 7px;
-    }
-  }
-
-  @media (max-width: $screen-sm) {
-    &__copy {
-      flex-direction: column;
-      padding: 10px 0;
-    }
-
-    &__copy-text {
-      padding-bottom: 15px;
-    }
-
-    &__copy-section {
-      padding-left: 5px;
-
-      &:not(:last-child) {
-        padding-right: 5px;
-      }
     }
   }
 }
@@ -132,16 +134,14 @@
     margin-bottom: 7px;
     display: block;
     color: $gray;
+
+    @include _992 {
+      padding: 9px 0;
+    }
   }
 
   &__name {
     text-transform: uppercase;
-  }
-
-  @media (max-width: $screen-md) {
-    &__link {
-      padding: 9px 0;
-    }
   }
 }
 
@@ -156,6 +156,9 @@
     background-color: $seashell;
     border: none;
 
+    @include _992 {
+      height: 45px;
+    }
 
     &::placeholder {
       font-size: 12px;
@@ -179,14 +182,8 @@
     @include effect;
     color: #fff;
     background-color: $default;
-  }
 
-  @media (max-width: $screen-md) {
-    &__email {
-      height: 45px;
-    }
-
-    &__btn {
+    @include _992 {
       height: 45px;
     }
   }

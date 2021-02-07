@@ -1,6 +1,10 @@
 .contact {
   padding: 115px 0 120px 0;
 
+  @include _640 {
+    padding: 50px 0;
+  }
+
   &__form {
     width: 100%;
     max-width: 470px;
@@ -83,9 +87,4 @@
     background-color: transparent;
     color: $accent;
   }
-
-  @media (max-width: $screen-sm) {
-    padding: 50px 0;
-  }
 }
-

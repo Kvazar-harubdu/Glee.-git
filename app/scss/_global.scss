@@ -32,8 +32,8 @@ body {
   font-size: 36px;
   @include dmsans-700;
 
-  @media (max-width: 640px) {
-    font-size: calc(24px + (36 - 24) * ((100vw - 320px) / (640 - 320)));
+  @include _640 {
+    font-size: calc(24px + 12 * ((100vw - 320px) / 320));
   }
 }
 
@@ -61,62 +61,63 @@ body {
   border: 0;
 }
 
-.filter {
+.mix-filter {
   display: flex;
   justify-content: center;
 
+  @include _992 {
+    overflow-x: auto;
+  }
+
   &__item:not(:last-child) {
     margin-right: 19px;
+
+    @include _992 {
+      margin-right: 2px;
+    }
   }
 
   &__btn,
   &__button {
     @include filter-hover;
-  }
 
-  @media (max-width: $screen-md) {
-    overflow-x: auto;
-
-    &__btn,
-    &__button {
+    @include _992 {
       padding: 8px 12px;
-
-      &:hover {
-        transform: translateY(0);
-      }
     }
 
-    &__item:not(:last-child) {
-      margin-right: 2px;
+    &:hover {
+      @include _992 {
+        transform: translateY(0);
+      }
     }
   }
 }
 
-// .filter--title {
-//   position: relative;
-//   text-transform: uppercase;
-//   @include dmsans-700;
-//   font-size: 18px;
-//   color: $accent;
+.filter-title {
+  position: relative;
+  text-transform: uppercase;
+  @include dmsans-700;
+  font-size: 18px;
+  color: $accent;
 
-//   &::after {
-//     @extend %before;
-//     width: 38px;
-//     height: 2px;
-//     border-radius: 1px;
-//     background-color: $default;
-//     margin-left: 17px;
-//     top: 50%;
-//   }
-// }
+  &::after {
+    @extend %before;
+    width: 38px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: $default;
+    margin-left: 17px;
+    top: 50%;
+  }
+}
 
-// .filter-checkbox {
-//   @include rubik-400;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-start;
-//   height: 42px;
-//   padding: 0 23px 0 16px;
-//   border-radius: 5px;
-//   cursor: pointer;
-// }
+.filter-checkbox {
+  @include rubik-400;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 42px;
+  padding: 0 23px 0 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}

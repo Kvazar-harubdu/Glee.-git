@@ -1,6 +1,10 @@
 .rule {
   padding-top: 118px;
 
+  @include _640 {
+    padding-top: 50px;
+  }
+
   &__title {
     @include rubik-500;
     margin-bottom: 23px;
@@ -11,10 +15,6 @@
 
   &__text:not(:last-child) {
     margin-bottom: 60px;
-  }
-
-  @media (max-width: $screen-sm) {
-    padding-top: 50px;
   }
 }
 

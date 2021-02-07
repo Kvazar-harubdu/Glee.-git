@@ -14,6 +14,10 @@
     line-height: 1;
     margin-bottom: 5px;
     text-align: center;
+
+    @include _992 {
+      font-size: calc(30px + 6 * ((100vw - 320px) / 320));
+    }
   }
 
   &__list {
@@ -30,14 +34,8 @@
   &__link {
     color: inherit;
     @include effect;
-  }
 
-  @media (max-width: $screen-md) {
-    &__title {
-      font-size: calc(30px + (36 - 30) * ((100vw - 320px) / (640 - 320)));
-    }
-
-    &__link {
+    @include _992 {
       padding: 10px 0;
     }
   }
