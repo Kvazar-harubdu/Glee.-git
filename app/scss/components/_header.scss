@@ -205,14 +205,11 @@
 }
 
 .user-menu {
-  display: flex;
-  align-items: center;
-  flex-basis: 320px;
   position: absolute;
+  max-width: 320px;
+  width: 100%;
   right: 0;
-  top: 0;
-  transform: translateY(-50%);
-  @extend %bg-img;
+  top: -70%;
   z-index: 15;
 
   @include _640 {
@@ -221,50 +218,60 @@
     transform: scale(0.9);
   }
 
-  &__icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: -5px;
-    @include effect-icon;
-    @include path;
+  .list-icon.user-menu__icon {
+    opacity: 1;
+    max-width: 320px;
+    width: 100%;
 
-    &--circle {
+    .list-icon__btn {
+      width: 53px;
+      height: 52px;
+      border-radius: 50%;
+    }
+
+    .list-icon__item {
+      margin: 0;
+    }
+
+    .user-menu__circle {
       position: relative;
       width: 88px;
       height: 51px;
+      padding: 0;
       background-color: $light-brown;
       transition: $trans;
-    }
 
-    &--circle-left {
-      margin-left: 21px;
-      border-top-left-radius: 25px;
-      border-bottom-left-radius: 25px;
+      &--left {
+        margin-left: 15px;
+        border-radius: 0;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
 
-      @include _640 {
-        margin-left: 5px;
+        @include _640 {
+          margin-left: 5px;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 1px;
+          height: 32px;
+          right: 0;
+          top: 10px;
+          background-color: #fff;
+          z-index: 2;
+        }
       }
 
-      &::before {
-        content: "";
-        position: absolute;
-        width: 1px;
-        height: 32px;
-        right: 0;
-        top: 10px;
-        background-color: #fff;
-        z-index: 2;
-      }
-    }
+      &--right {
+        margin-right: 20px;
+        border-radius: 0;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
 
-    &--circle-right {
-      margin-right: 18px;
-      border-top-right-radius: 25px;
-      border-bottom-right-radius: 25px;
-
-      @include _640 {
-        margin-right: 5px;
+        @include _640 {
+          margin-right: 5px;
+        }
       }
     }
 
@@ -279,18 +286,18 @@
     &:active .user-menu__path {
       fill: $seashell;
     }
-  }
 
-  &__number {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    top: 8px;
-    left: 53%;
-    text-align: center;
-    font-size: 10px;
-    background-color: #fff;
-    border-radius: 50%;
-    z-index: 5;
+    .user-menu__number {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 8px;
+      left: 53%;
+      text-align: center;
+      font-size: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      z-index: 5;
+    }
   }
 }
