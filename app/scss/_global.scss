@@ -121,3 +121,43 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.sidebar-btn {
+  &__open {
+    padding: 0;
+    border: none;
+    outline: transparent;
+    @include btn;
+    @include path;
+    display: none;
+
+    @include _992 {
+      display: block;
+      transition: $trans;
+    }
+  }
+
+  &__close {
+    border: none;
+    outline: transparent;
+    @include btn;
+    @include path;
+    display: none;
+
+    @include _992 {
+      display: block;
+    }
+
+    &:hover .sidebar-btn__close--path {
+      fill: $default;
+    }
+
+    &:focus .sidebar-btn__close--path {
+      fill: $light-brown;
+    }
+
+    &:active .sidebar-btn__close--path {
+      fill: $seashell;
+    }
+  }
+}

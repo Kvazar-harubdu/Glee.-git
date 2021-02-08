@@ -1,5 +1,14 @@
 $(function () {
 
+
+  $('.blog-btn__open').on('click', function () {
+    $('.blog-aside').addClass('blog-aside--active');
+  });
+
+  $('.blog-btn__close').on('click', function () {
+    $('.blog-aside').removeClass('blog-aside--active');
+  });
+
   $('.catalog__open').on('click', function () {
     $('.catalog__filter').addClass('catalog__filter--active');
   });

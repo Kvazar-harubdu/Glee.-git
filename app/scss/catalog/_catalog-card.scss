@@ -34,12 +34,6 @@
 
   &__open {
     margin-right: 15px;
-    padding: 0;
-    border: none;
-    outline: transparent;
-    @include btn;
-    @include path;
-    display: none;
 
     @include _992 {
       display: block;
@@ -50,31 +44,18 @@
   &__close {
     margin-left: auto;
     margin-bottom: 15px;
-    border: none;
-    outline: transparent;
-    @include btn;
-    @include path;
-    display: none;
 
     @include _992 {
       display: block;
-    }
-
-    &:hover .catalog__close--path {
-      fill: $default;
-    }
-
-    &:focus .catalog__close--path {
-      fill: $light-brown;
-    }
-
-    &:active .catalog__close--path {
-      fill: $seashell;
     }
   }
 
   &__content {
     max-width: 870px;
+
+    .pagination--size {
+      margin-top: -35px;
+    }
   }
 
   &__inner {

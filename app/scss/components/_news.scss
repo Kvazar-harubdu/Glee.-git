@@ -103,54 +103,31 @@
       font-size: calc(14px + 4 * ((100vw - 320px) / 320));
     }
   }
+}
 
-  &__info {
-    border-top: 1px solid $light-gray;
-    padding-top: 12px;
-    margin-bottom: 18px;
-  }
+.article-time {
+  border-top: 1px solid $light-gray;
+  padding-top: 12px;
+  margin-bottom: 18px;
+
 
   &__data {
     position: relative;
     @include article;
     margin-right: 30px;
-    padding-left: 15px;
 
     @include _640 {
       display: block;
-    }
-
-    &::before {
-      @extend %before;
-      width: 15px;
-      height: 15px;
-      left: 0;
-      bottom: 0;
-      background-image: url('../images/icons/calendar.svg');
     }
   }
 
   &__author {
     position: relative;
-    padding-left: 15px;
     @include article;
     @include effect;
 
     @include _640 {
-      padding: 10px 17px 17px;
-    }
-
-    &::before {
-      @extend %before;
-      background-image: url('../images/icons/author.svg');
-      left: 0;
-      bottom: 0;
-      width: 15px;
-      height: 15px;
-
-      @include _640 {
-        bottom: 18px;
-      }
+      padding: 10px 0 16px;
     }
   }
 }
