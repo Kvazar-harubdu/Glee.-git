@@ -1,6 +1,44 @@
 $(function () {
 
 
+  $('.product-tabs__link').on('click', function (e) {
+    e.preventDefault();
+    $('.product-tabs__link').removeClass('product-tabs__link--active');
+    $(this).addClass('product-tabs__link--active');
+
+    $('.product-tabs__item').removeClass('product-tabs__item--active');
+    $($(this).attr('href')).addClass('product-tabs__item--active');
+  });
+
+  $('.product-slider__wrapper').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    infinite: false,
+    responsive: [{
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 780,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      }
+    ]
+  });
+
+
   $('.blog-btn__open').on('click', function () {
     $('.blog-aside').addClass('blog-aside--active');
   });
@@ -25,6 +63,19 @@ $(function () {
     slidesToShow: 3,
     slidesToScroll: 1,
     vertical: true,
+    responsive: [{
+      breakpoint: 640,
+      settings: {
+        vertical: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        draggable: true,
+        focusOnSelect: false,
+        infinite: true,
+        speed: 500,
+        asNavFor: null,
+      },
+    }]
   });
   $('.product__big-slider').slick({
     asNavFor: '.product__small-slider',
@@ -69,9 +120,9 @@ $(function () {
     $('.product-card__price:contains("23$")').html('$29.00');
   });
 
-  $('.catalog__selrct, .product__number').styler();
+  $('.catalog__select, .product__number').styler();
 
-  $('.filter-products__stars').rateYo({
+  $('.top-product__stars').rateYo({
     starWidth: "11px",
     normalFill: "#d6d6d6",
     ratedFill: "#ffcc00",
@@ -92,12 +143,12 @@ $(function () {
     prettify_enabled: true,
     prettify_separator: '.',
     onStart: function (data) {
-      $('.filter-prise__from').text(data.from);
-      $('.filter-prise__to').text(data.to);
+      $('.filter-prise__symbol--from').text(data.from);
+      $('.filter-prise__symbol--to').text(data.to);
     },
     onChange: function (data) {
-      $('.filter-prise__from').text(data.from);
-      $('.filter-prise__to').text(data.to);
+      $('.filter-prise__symbol--from').text(data.from);
+      $('.filter-prise__symbol--to').text(data.to);
     },
   });
 

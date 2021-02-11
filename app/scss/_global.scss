@@ -123,41 +123,33 @@ body {
 }
 
 .sidebar-btn {
-  &__open {
-    padding: 0;
-    border: none;
-    outline: transparent;
-    @include btn;
-    @include path;
-    display: none;
+  padding: 0;
+  border: none;
+  outline: transparent;
+  @include btn;
+  @include path;
+  display: none;
 
-    @include _992 {
-      display: block;
-      transition: $trans;
-    }
+  @include _992 {
+    display: block;
+    transition: $trans;
   }
 
-  &__close {
-    border: none;
-    outline: transparent;
-    @include btn;
-    @include path;
-    display: none;
-
-    @include _992 {
-      display: block;
-    }
-
-    &:hover .sidebar-btn__close--path {
-      fill: $default;
-    }
-
-    &:focus .sidebar-btn__close--path {
-      fill: $light-brown;
-    }
-
-    &:active .sidebar-btn__close--path {
-      fill: $seashell;
-    }
+  &:hover .sidebar-btn--path {
+    fill: $default;
   }
+
+  &:focus .sidebar-btn--path {
+    fill: $light-brown;
+  }
+
+  &:active .sidebar-btn--path {
+    fill: $seashell;
+  }
+}
+
+.blog-title {
+  @include rubik-700;
+  font-size: 24px;
+  color: $dark-blue;
 }

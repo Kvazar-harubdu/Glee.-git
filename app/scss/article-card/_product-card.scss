@@ -1,0 +1,172 @@
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 270px;
+  width: 100%;
+  min-height: 380px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+  text-align: center;
+  cursor: pointer;
+
+  @include _992 {
+    margin-bottom: 20px;
+  }
+
+  &:hover .list-icon {
+    opacity: 1;
+  }
+
+  &__box {
+    margin: auto;
+  }
+
+  &__img {
+    object-fit: contain;
+
+  }
+
+  &__info {
+    padding-bottom: 38px;
+  }
+
+  &__caption {
+    font-size: 16px;
+  }
+
+  &__price {
+    @include dmsans-700;
+    color: $default;
+  }
+
+  &__descr,
+  &__stars {
+    display: none;
+  }
+
+  &--list {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 100%;
+    box-shadow: none;
+    cursor: auto;
+
+    @include _640 {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+
+    &:not(:nth-child(-n + 4)) {
+      display: none;
+    }
+
+    .product-card {
+
+      &__box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 500px;
+        max-width: 370px;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 58px;
+        box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+        border-radius: 0;
+
+        @include _640 {
+          margin-right: 0;
+          min-height: auto;
+          width: auto;
+        }
+      }
+
+      &__img {
+        width: 85%;
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        min-height: 500px;
+        padding: 85px 0 65px 0;
+
+        @include _640 {
+          padding: 30px 0;
+          min-height: auto;
+        }
+      }
+
+      &__caption {
+        font-size: 40px;
+        line-height: 1;
+        margin-bottom: 20px;
+        @include rubik-400;
+      }
+
+      &__stars {
+        display: block;
+        margin-bottom: 23px;
+      }
+
+      &__price {
+        @include rubik-400;
+        font-size: 30px;
+        line-height: 1.9;
+        color: $accent;
+        margin-bottom: 14px;
+      }
+
+      &__descr {
+        display: block;
+        @include rubik-400;
+        margin-bottom: 40px;
+        max-width: 438px;
+      }
+    }
+
+    .filter-icon {
+      opacity: 1;
+      position: relative;
+      justify-content: flex-start;
+
+      @include _640 {
+        top: 0;
+      }
+    }
+
+    .list-icon {
+      &__btn {
+        border-radius: 0;
+        background-color: #fff;
+        box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+        @include effect-icon;
+        @include path;
+
+        path {
+          fill: #a3bbc8;
+        }
+
+        &:hover {
+          background-color: $default;
+
+          path {
+            fill: #fff;
+          }
+        }
+      }
+
+      &__item {
+        &--zoom {
+          display: none;
+        }
+      }
+    }
+  }
+}

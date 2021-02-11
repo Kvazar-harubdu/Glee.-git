@@ -79,10 +79,14 @@
     display: block;
     font-size: 18px;
     color: $charcoal;
+     max-height: 70px;
+     overflow: hidden;
   }
 
   &__text {
     display: block;
     font-weight: 400;
+    max-height: 100px;
+    overflow: hidden;
   }
 }

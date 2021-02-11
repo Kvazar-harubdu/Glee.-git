@@ -1,0 +1,32 @@
+.top-product {
+  display: flex;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    margin-left: 20px;
+  }
+
+  &__link-title {
+    color: $accent;
+  }
+
+  &__name {
+    @include rubik-400;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  &__prise {
+    display: block;
+    margin-top: 5px;
+  }
+
+  &__stars {
+    padding: 0;
+  }
+}

@@ -1,0 +1,74 @@
+.list-icon {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+
+  &__item:not(:last-child) {
+    margin-right: 16px;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    color: inherit;
+    @include effect-icon;
+    cursor: pointer;
+
+    &--fill {
+      background-color: $default;
+    }
+
+    &:hover path {
+      fill: $nero;
+    }
+
+    &--user {
+      width: 53px;
+      height: 51px;
+
+      &:hover .user-menu__path {
+        fill: $default;
+      }
+
+      &:focus .user-menu__path {
+        fill: $light-brown;
+      }
+
+      &:active .user-menu__path {
+        fill: $seashell;
+      }
+    }
+
+    &--social:hover .list-icon--social-path {
+      fill: #ffff;
+    }
+  }
+
+  .filter-icon {
+    display: none;
+  }
+
+  &--header {
+    justify-content: space-between;
+    min-width: 320px;
+    width: 100%;
+    opacity: 1;
+  }
+
+  &--social {
+    opacity: 1;
+    display: flex;
+    margin-left: 100px;
+  }
+}

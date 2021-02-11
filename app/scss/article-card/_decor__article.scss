@@ -1,0 +1,87 @@
+.decor-article {
+  display: flex;
+  justify-content: center;
+  background-color: $linen;
+  height: 390px;
+
+  @include _1365 {
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  @include _640 {
+    height: auto;
+  }
+
+  @include _458 {
+    flex-direction: column;
+  }
+
+  &:not(:last-child) {
+    @include _1365 {
+      margin-bottom: 110px;
+    }
+
+    @include _640 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    transform: translate(35px, -100px);
+
+    @include _640 {
+      transform: translateX(-10px);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 378px;
+    margin-left: 60px;
+    padding-right: 15px;
+
+    @include _640 {
+      margin: 0;
+      padding: 20px 10px;
+    }
+  }
+
+  &__title {
+    @include dmsans-700;
+    max-width: 250px;
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    max-height: 100px;
+    overflow: hidden;
+
+    @include _640 {
+      font-size: calc(20px + 6 * ((100vw - 320px) / 320));
+    }
+  }
+
+  &__text {
+    @include rubik-400;
+    margin-bottom: 30px;
+    max-width: 360px;
+    max-height: 200px;
+    overflow: hidden;
+
+    @include _640 {
+      font-size: calc(14px + 2 * ((100vw - 320px) / 320));
+    }
+  }
+
+  &__btn {
+    width: 180px;
+    @include effect;
+    border-radius: 5px;
+    color: $dark-blue;
+    border: 1px solid $accent;
+    @include path;
+  }
+}

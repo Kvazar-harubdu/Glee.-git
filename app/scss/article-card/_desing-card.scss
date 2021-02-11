@@ -1,0 +1,44 @@
+.design-card {
+  flex-basis: 370px;
+  height: 247px;
+  margin-bottom: 34px;
+  @include dmsans-700;
+  background-color: $smoke;
+  overflow: hidden;
+
+  &__descr {
+    position: relative;
+    margin: 36px 0 0 36px;
+    z-index: 5;
+  }
+
+  &__link {
+    height: 247px;
+    display: block;
+    @include effect;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &__caption {
+    width: 175px;
+    margin-bottom: 8px;
+    font-size: 20px;
+    line-height: 1.2;
+    color: $nero;
+    max-height: 90px;
+    overflow: hidden;
+  }
+
+  &__img {
+    position: relative;
+    top: -120px;
+    @extend %bg-img;
+  }
+
+  &__style {
+    color: $default;
+  }
+}

@@ -20,22 +20,22 @@
       padding: 0 5px;
       height: 45px;
     }
-  }
 
-  &__prev {
-    display: none;
-    margin-right: 15px;
+    &--prev {
+      display: none;
+      margin-right: 15px;
 
-    @include _458 {
-      margin-right: 5px;
+      @include _458 {
+        margin-right: 5px;
+      }
     }
-  }
 
-  &__next {
-    margin-left: 15px;
+    &--next {
+      margin-left: 15px;
 
-    @include _458 {
-      margin-left: 5px;
+      @include _458 {
+        margin-left: 5px;
+      }
     }
   }
 

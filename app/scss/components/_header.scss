@@ -13,10 +13,7 @@
     left: 0;
     top: 0;
     transform: translateY(-50%);
-
-    @include _1250 {
-      z-index: 15;
-    }
+    z-index: 15;
   }
 }
 
@@ -35,7 +32,6 @@
 
     @include _1250 {
       position: absolute;
-      display: block;
       text-align: center;
       width: 60%;
       top: -1000%;
@@ -134,7 +130,6 @@
 
 .burger-menu {
   position: relative;
-  display: flex;
   justify-content: center;
   align-items: center;
   width: 50px;
@@ -218,86 +213,65 @@
     transform: scale(0.9);
   }
 
-  .list-icon.user-menu__icon {
-    opacity: 1;
-    max-width: 320px;
-    width: 100%;
+  &__item {
+    width: 88px;
+  }
 
-    .list-icon__btn {
-      width: 53px;
-      height: 52px;
-      border-radius: 50%;
-    }
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 88px;
+    height: 51px;
+    @include effect-icon;
+    background-color: $light-brown;
 
-    .list-icon__item {
-      margin: 0;
-    }
+    &--left {
+      border-radius: 25px 0 0 25px;
 
-    .user-menu__circle {
-      position: relative;
-      width: 88px;
-      height: 51px;
-      padding: 0;
-      background-color: $light-brown;
-      transition: $trans;
 
-      &--left {
-        margin-left: 15px;
-        border-radius: 0;
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
-
-        @include _640 {
-          margin-left: 5px;
-        }
-
-        &::before {
-          content: "";
-          position: absolute;
-          width: 1px;
-          height: 32px;
-          right: 0;
-          top: 10px;
-          background-color: #fff;
-          z-index: 2;
-        }
+      @include _640 {
+        margin-left: 5px;
       }
 
-      &--right {
-        margin-right: 20px;
-        border-radius: 0;
-        border-top-right-radius: 25px;
-        border-bottom-right-radius: 25px;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 32px;
+        right: 0;
+        top: 10px;
+        background-color: #fff;
+        z-index: 2;
+      }
 
-        @include _640 {
-          margin-right: 5px;
-        }
+      &:hover::before,
+      &:focus::before {
+        display: none;
       }
     }
 
-    &:hover .user-menu__path {
-      fill: $default;
-    }
+    &--right {
+      transform: translateX(-9px);
+      border-radius: 0 25px 25px 0;
 
-    &:focus .user-menu__path {
-      fill: $light-brown;
+      @include _640 {
+        margin-right: 5px;
+      }
     }
+  }
 
-    &:active .user-menu__path {
-      fill: $seashell;
-    }
-
-    .user-menu__number {
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      top: 8px;
-      left: 53%;
-      text-align: center;
-      font-size: 10px;
-      background-color: #fff;
-      border-radius: 50%;
-      z-index: 5;
-    }
+  &__number {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 8px;
+    left: 53%;
+    text-align: center;
+    font-size: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 5;
   }
 }

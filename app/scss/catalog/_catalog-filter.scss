@@ -14,12 +14,16 @@
       background-color: $alice-blue;
     }
   }
+
+  &--brand {
+    margin-top: 10px;
+  }
 }
 
 .filter-prise {
   margin-bottom: 73px;
 
-  &__form {
+  &__box {
     padding-right: 25px;
   }
 
@@ -36,7 +40,7 @@
     margin-bottom: 25px;
   }
 
-  &--symbol {
+  &__symbol {
     padding-left: 10px;
     position: relative;
 
@@ -46,74 +50,58 @@
       left: 0;
     }
   }
-}
 
-.irs--flat {
-  height: 15px;
-  top: -20px;
-  cursor: pointer;
-
-  .irs-line {
-    top: 26px;
-    height: 2px;
-    background-color: $default;
-    border-radius: 1px;
-  }
-
-  .irs-bar {
-    top: 26px;
-    height: 3px;
-    background-color: $default;
-  }
-
-  .irs-handle {
-    top: 20px;
-    width: 15px;
+  .irs--flat {
     height: 15px;
-    background-color: $default;
+    top: -20px;
     cursor: pointer;
 
-    i:first-child {
+    .irs-line {
+      top: 26px;
+      height: 2px;
+      background-color: $default;
+      border-radius: 1px;
+    }
+
+    .irs-bar {
+      top: 26px;
+      height: 3px;
+      background-color: $default;
+    }
+
+    .irs-handle {
+      top: 20px;
+      width: 15px;
+      height: 15px;
+      background-color: $default;
+      cursor: pointer;
+
+      i:first-child {
+        display: none;
+      }
+    }
+
+    .irs-min,
+    .irs-max {
       display: none;
     }
-  }
 
-  .irs-min,
-  .irs-max {
-    display: none;
-  }
-
-  .irs-from,
-  .irs-to,
-  .irs-single {
-    display: none;
-    top: 50px;
-    background-color: transparent;
-
-
-    &::before {
+    .irs-from,
+    .irs-to,
+    .irs-single {
       display: none;
+      top: 50px;
+      background-color: transparent;
+
+
+      &::before {
+        display: none;
+      }
     }
   }
 }
 
-.filter-brand {
-  margin-bottom: 37px;
-
-  &__title {
-    margin-bottom: 31px;
-  }
-
-  &__input {
-    @include checkbox;
-
-    &:checked+.filter-brand__checkbox {
-      background-color: $alice-blue;
-    }
-  }
-}
-
-.filter-products {
+.top-sale {
 
   &__title {
     margin-bottom: 28px;
@@ -124,37 +112,4 @@
     height: 70px;
     object-fit: cover;
   }
-
-  &__block {
-    display: flex;
-
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
-  }
-
-  &__description {
-    margin-left: 20px;
-  }
-
-  &__link-title {
-    color: $accent;
-  }
-
-  &__name {
-    @include rubik-400;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    line-height: 1;
-  }
-
-  &__prise {
-    display: block;
-    margin-top: 5px;
-  }
-}
-
-.filter-products__stars {
-  padding: 0;
 }

@@ -66,15 +66,18 @@
     font-size: 72px;
     line-height: 1;
     text-transform: uppercase;
+    max-height: 300px;
+    overflow: hidden;
 
     @include _992 {
-      font-size: calc(25px + 42 * ((100vw - 320px) /  320));
+      font-size: calc(25px + 42 * ((100vw - 320px) / 320));
     }
   }
 
   &__descr {
     max-width: 450px;
     padding-top: 220px;
+    
 
     @include _992 {
       padding-top: 40px;
@@ -98,6 +101,8 @@
     font-size: 18px;
     line-height: 1.6;
     color: $dark-blue;
+    max-height: 300px;
+    overflow: hidden;
 
     @include _992 {
       margin: 0 auto 40px;

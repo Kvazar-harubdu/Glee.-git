@@ -94,7 +94,6 @@
 
     @include _640 {
       flex-basis: auto;
-      padding: 20px 0;
     }
 
     &:not(:first-child) {
@@ -123,6 +122,7 @@
       border-right: 1px solid $lavender;
 
       @include _640 {
+        padding: 20px 0;
         border: none;
         border-bottom: 1px solid $lavender;
       }
@@ -137,6 +137,7 @@
       border-right: 1px solid $lavender;
 
       @include _640 {
+        padding: 20px 0;
         border: none;
         border-bottom: 1px solid $lavender;
       }
@@ -148,6 +149,10 @@
 
     &--medal {
       padding-left: 30px;
+
+      @include _640 {
+        padding: 20px 0 0 0;
+      }
 
       &::before {
         background-image: url('../images/icons/history-medal.svg');
