@@ -1,6 +1,5 @@
 $(function () {
 
-
   $('.product-tabs__link').on('click', function (e) {
     e.preventDefault();
     $('.product-tabs__link').removeClass('product-tabs__link--active');
@@ -66,11 +65,9 @@ $(function () {
     responsive: [{
       breakpoint: 640,
       settings: {
-        vertical: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         draggable: true,
-        focusOnSelect: false,
         infinite: true,
         speed: 500,
         asNavFor: null,

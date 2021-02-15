@@ -18,7 +18,7 @@
 
   &__img-box {
     display: flex;
-    width: 550px;
+    max-width: 550px;
     margin-right: 67px;
 
     @include _992 {
@@ -35,12 +35,12 @@
     cursor: pointer;
 
     @include _640 {
-      min-width: 138px;
+      max-width: 138px;
     }
   }
 
   &__img-littel {
-    max-width: 138px;
+    width: 138px;
     height: 170px;
     object-fit: cover;
 
@@ -73,6 +73,10 @@
       margin-bottom: 30px;
       margin: 0 auto;
     }
+  }
+
+  .slick-slide {
+   text-align: center;
   }
 
   &__content {

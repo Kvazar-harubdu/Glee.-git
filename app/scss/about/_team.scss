@@ -63,7 +63,7 @@
   }
 
   &__images {
-    max-width: 370px;
+    width: 370px;
     min-height: 320px;
     object-fit: cover;
   }
@@ -94,11 +94,6 @@
   &__profession {
     @include rubik-400;
     color: $comet;
-  }
-
-  &__network {
-    // display: flex;
-    // justify-content: flex-end;
   }
 
   &__link {

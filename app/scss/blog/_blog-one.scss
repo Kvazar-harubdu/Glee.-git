@@ -152,7 +152,99 @@
       padding: 12px 17px;
     }
   }
+}
 
+.blog-comment {
+  margin-bottom: 60px;
+
+  &__box {
+    display: flex;
+    margin-top: 30px;
+
+    @include _458 {
+      flex-direction: column;
+    }
+
+    &--retreat {
+      padding-left: 132px;
+
+      @include _640 {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 45px;
+  }
+
+  &__avatar {
+    min-width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 32px;
+
+    @include _458 {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__inner {
+    padding-bottom: 20px;
+    border-bottom: 1px solid $light-gray;
+  }
+
+  &__person {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+
+  &__name {
+    @include rubik-700;
+    color: $dark-blue;
+  }
+
+  &__data {
+    @include rubik-400;
+    color: #9e9e9e;
+  }
+
+  &__info {
+    @include rubik-400;
+    margin-bottom: 15px;
+    color: $comet;
+  }
+
+  &__link-more {
+    display: inline-block;
+    position: relative;
+    color: $comet;
+    padding-right: 20px;
+    font-size: 14px;
+    @include rubik-400;
+    @include effect;
+
+    @include _992 {
+      padding: 12px 20px 13px 0;
+    }
+
+    &::after {
+      @extend %before;
+      background-image: url('../images/icons/arrow-blog.svg');
+      width: 15px;
+      height: 17px;
+      bottom: 4px;
+      right: 0;
+
+      @include _992 {
+        bottom: 12px;
+      }
+    }
+  }
+}
+
+.sending-form {
   &__caption {
     margin-bottom: 32px;
   }
@@ -244,95 +336,5 @@
     color: #fff;
     text-transform: uppercase;
     cursor: pointer;
-  }
-}
-
-.blog-comment {
-  margin-bottom: 60px;
-
-  &__box {
-    display: flex;
-    margin-top: 30px;
-
-    @include _458 {
-      flex-direction: column;
-    }
-
-    &--retreat {
-      padding-left: 132px;
-
-      @include _640 {
-        padding-left: 0;
-      }
-    }
-  }
-
-  &__title {
-    margin-bottom: 45px;
-  }
-
-  &__avatar {
-    min-width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-right: 32px;
-
-    @include _458 {
-      margin-bottom: 10px;
-    }
-  }
-
-  &__inner {
-    padding-bottom: 20px;
-    border-bottom: 1px solid $light-gray;
-  }
-
-  &__person {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-  }
-
-  &__name {
-    @include rubik-700;
-    color: $dark-blue;
-  }
-
-  &__data {
-    @include rubik-400;
-    color: #9e9e9e;
-  }
-
-  &__info {
-    @include rubik-400;
-    margin-bottom: 15px;
-    color: $comet;
-  }
-
-  &__link-more {
-    display: inline-block;
-    position: relative;
-    color: $comet;
-    padding-right: 20px;
-    font-size: 14px;
-    @include rubik-400;
-    @include effect;
-
-    @include _992 {
-      padding: 12px 20px 13px 0;
-    }
-
-    &::after {
-      @extend %before;
-      background-image: url('../images/icons/arrow-blog.svg');
-      width: 15px;
-      height: 17px;
-      bottom: 4px;
-      right: 0;
-
-      @include _992 {
-        bottom: 12px;
-      }
-    }
   }
 }

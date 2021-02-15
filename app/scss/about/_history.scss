@@ -21,6 +21,7 @@
 
     @include _1250 {
       margin-right: 0;
+       min-height: calc(200px + (675 - 475) * ((100vh - 320px) / (1250 -320)));
     }
   }
 

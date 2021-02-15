@@ -61,14 +61,19 @@
 
   &--header {
     justify-content: space-between;
-    min-width: 320px;
+    max-width: 320px;
     width: 100%;
     opacity: 1;
+
+    &__item:not(:last-child) {
+      margin-right: 0;
+    }
   }
 
   &--social {
     opacity: 1;
     display: flex;
-    margin-left: 100px;
+    left: 80%;
+    top: 35%;
   }
 }
