@@ -1,0 +1,124 @@
+.furniture {
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    position: absolute;
+    right: 50%;
+    bottom: 45px;
+    transform: translateX(50%);
+  }
+
+  li:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    @include btn;
+    @include focus-text;
+    font-size: 11px;
+    border: none;
+    border-radius: 50%;
+    background-color: $peach-orange;
+
+
+    &:hover {
+      transform: scale(1.5);
+      background-color: $gray;
+    }
+
+    &:active {
+      border: 1px solid $accent;
+      background-color: $seashell;
+    }
+  }
+
+  .slick-active button {
+    background-color: #fff;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 1200px;
+    min-height: 820px;
+
+    @include _992 {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(350px + (820 - 350) * ((100vh - 320px) / (992 -320)));
+    }
+  }
+
+  &__item {
+    @extend %bg-img;
+    background-size: cover;
+  }
+
+  &__title {
+    @include rubik-500;
+    margin-bottom: 20px;
+    font-size: 72px;
+    line-height: 1;
+    text-transform: uppercase;
+    max-height: 300px;
+    overflow: hidden;
+
+    @include _992 {
+      font-size: calc(25px + 42 * ((100vw - 320px) / 320));
+    }
+  }
+
+  &__descr {
+    max-width: 450px;
+    padding-top: 220px;
+
+
+    @include _992 {
+      padding-top: 40px;
+      text-align: center;
+    }
+  }
+
+  &__box {
+    margin: auto 0;
+    max-width: 640px;
+  }
+
+  &__images {
+    object-fit: cover;
+  }
+
+  &__text {
+    @include rubik-400;
+    max-width: 367px;
+    margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: $dark-blue;
+    max-height: 300px;
+    overflow: hidden;
+
+    @include _992 {
+      margin: 0 auto 40px;
+      font-size: calc(14px + 4 * ((100vw - 320px) / 320));
+    }
+  }
+
+  &__btn {
+    max-width: 200px;
+    background-color: $default;
+    color: #fff;
+    @include effect;
+    @include path;
+
+    @include _992 {
+      margin: 0 auto;
+    }
+  }
+}

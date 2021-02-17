@@ -28,6 +28,8 @@
   }
 
   &__img {
+    max-width: 240px;
+    max-height: 410px;
     object-fit: cover;
     transform: translate(35px, -100px);
 

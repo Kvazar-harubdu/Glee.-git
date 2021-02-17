@@ -1,0 +1,25 @@
+@import 'fonts';
+@import 'vars';
+@import 'reset';
+@import 'libs';
+@import 'global';
+
+
+@import '../modul/_header/_header';
+@import '../modul/_furniture/_furniture';
+@import '../modul/_support/_support';
+@import '../modul/_gallery/_gallery';
+@import '../modul/_decor/_decor';
+@import '../modul/_design/_design';
+@import '../modul/_video/_video';
+@import '../modul/_news/_news';
+@import '../modul/_partners/_partners';
+@import '../modul/_footer/_footer';
+
+@import 'components/list-icon';
+@import 'article-card/product-card';
+@import 'article-card/decor__article';
+@import 'article-card/article-card';
+@import 'article-card/article-time';
+@import 'article-card/top-product';
+@import 'article-card/desing-card';

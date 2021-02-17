@@ -1,0 +1,177 @@
+.blog {
+  padding: 120px 0;
+
+  @include _992 {
+    padding: 50px 0 50px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__article-box {
+    max-width: 830px;
+    margin-right: 30px;
+
+    @include _992 {
+      min-width: 100%;
+    }
+  }
+
+  &__open {
+    margin-left: auto;
+  }
+
+  .pagination {
+    margin-top: 75px;
+  }
+}
+
+.blog-article {
+  margin-bottom: 51px;
+
+
+  &__box-img {
+    position: relative;
+    margin-bottom: 39px;
+  }
+
+  &__img {
+    width: 830px;
+    object-fit: cover;
+  }
+
+  &__title {
+    @include rubik-400;
+    font-size: 36px;
+    line-height: 1;
+    color: $dark-charcoal;
+    margin-bottom: 26px;
+
+    @include _640 {
+      font-size: calc(24px + 12 * ((100vw - 320px) / 320));
+    }
+  }
+
+  &__title-box {
+    color: inherit;
+  }
+
+  &__text {
+    line-height: 1.9;
+    margin-bottom: 32px;
+
+    &--one {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__link {
+    width: 180px;
+    @include effect;
+    color: $default;
+    border: 1px solid $default;
+  }
+}
+
+.blog-aside {
+  max-width: 270px;
+  width: 100%;
+
+  @include _992 {
+    display: none;
+    transform: translateY(-150%);
+  }
+
+  &--active {
+    display: block;
+    position: absolute;
+    right: 10px;
+    padding: 10px 0 0 10px;
+    transform: translateY(0);
+    background-color: $seashell;
+    min-height: auto;
+    transition: $trans;
+    z-index: 999;
+  }
+}
+
+.blog-post {
+  margin-top: -15px;
+
+  &__title {
+    margin-bottom: 28px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 23px;
+  }
+
+  &__img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+  }
+
+  &__content {
+    max-width: 180px;
+  }
+
+  &__caption {
+    @include rubik-400;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $dark-charcoal;
+    margin-bottom: 10px;
+  }
+
+  &__data {
+    display: flex;
+    align-items: center;
+  }
+
+  .article-time__data {
+    color: $nobel;
+    margin-left: 5px;
+  }
+}
+
+.blog-form {
+  position: relative;
+  margin-bottom: 60px;
+
+  &__input {
+    width: 270px;
+    height: 42px;
+    padding: 0 58px 0 10px;
+    @include effect;
+    border-radius: 5px;
+    border: 2px solid $alice-blue;
+
+    @include _992 {
+      width: 260px;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 42px;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    border: none;
+    border-radius: 5px;
+    @include effect;
+    @include path;
+    background-color: $alice-blue;
+    cursor: pointer;
+    z-index: 5;
+  }
+}
+

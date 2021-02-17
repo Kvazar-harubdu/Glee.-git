@@ -1,0 +1,36 @@
+.partners {
+  height: 436px;
+  margin-top: -170px;
+  padding: 160px 10px 90px;
+  background-color: $seashell;
+
+  @include _1250 {
+    margin-top: -190px;
+  }
+
+  &__wrapper {
+    margin-top: 105px;
+  }
+
+  &__slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item {
+    margin: auto 0;
+  }
+
+  &__img {
+    margin: 0 auto;
+    object-fit: cover;
+  }
+
+  &--size {
+    height: 250px;
+    margin-top: 0;
+    padding-top: 85px;
+    margin-bottom: -10px;
+  }
+}

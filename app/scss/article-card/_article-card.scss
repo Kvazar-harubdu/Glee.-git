@@ -42,12 +42,13 @@
 
   &__descr {
     max-width: 298px;
-    margin: auto 0;
+    padding: 15px 0 5px;
+    margin-bottom: auto;
     font-size: 18px;
     line-height: 1.2;
     color: $raising-black;
     max-height: 120px;
-    overflow: hidden;
+    overflow-y: auto;
 
     @include _640 {
       font-size: calc(14px + 4 * ((100vw - 320px) / 320));

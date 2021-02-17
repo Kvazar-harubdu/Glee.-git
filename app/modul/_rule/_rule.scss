@@ -1,0 +1,42 @@
+.rule {
+  padding-top: 118px;
+
+  @include _640 {
+    padding-top: 50px;
+  }
+
+  &__caption {
+    @include rubik-500;
+    text-align: left;
+    margin-bottom: 25px;
+    font-size: 24px;
+    line-height: 1;
+    color: $accent;
+  }
+
+  &__list {
+    list-style-type: decimal-leading-zero;
+    padding: 0 0 40px 0;
+    margin-bottom: 55px;
+    color: $accent;
+    @include rubik-400;
+  }
+
+  &__item {
+    margin-left: 30px;
+    padding-bottom: 18px;
+    line-height: 1.9;
+  }
+
+  &__title {
+    @include rubik-500;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: $accent;
+    line-height: 1;
+  }
+
+  &__text:not(:last-child) {
+    margin-bottom: 60px;
+  }
+}

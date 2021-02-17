@@ -1,0 +1,21 @@
+.gallery {
+
+  &__title {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include _992 {
+      justify-content: space-around;
+    }
+  }
+
+  &__filter {
+    margin-bottom: 80px;
+  }
+}

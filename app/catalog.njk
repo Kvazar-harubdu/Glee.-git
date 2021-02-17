@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glee | catalog</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#fcd7b6">
+    <meta name="msapplication-TileColor" content="#fcd7b6">
+    <meta name="theme-color" content="#fcd7b6">
+    <link rel="stylesheet" href="css/catalog.min.css">
+  </head>
+
+  <body>
+
+    {% include 'app/modul/_header/_header.html' %}
+
+    <main class="main">
+
+      <div class="bread-crumbs">
+        <div class="container">
+          <h2 class="bread-crumbs__title">Product list 1</h2>
+          <ul class="bread-crumbs__list">
+            <li class="bread-crumbs__item">
+              <a href="" class="bread-crumbs__link">
+              Home
+            </a>
+            </li>
+            <li class="bread-crumbs__item">
+              <span class="bread-crumbs__link">
+              Product list 1
+            </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {% include 'app/modul/_catalog/_catalog.html' %}
+
+      <div class="partners partners--size">
+        <div class="container container--small">
+          <div class="partners__slider">
+            <div class="partners__item">
+              <img class="partners__img" src="images/partners/peterson.png">
+            </div>
+            <div class="partners__item">
+              <img class="partners__img" src="images/partners/kmn.png">
+            </div>
+            <div class="partners__item">
+              <img class="partners__img" src="images/partners/chainforse.png">
+            </div>
+            <div class="partners__item">
+              <img class="partners__img" src="images/partners/next.png">
+            </div>
+            <div class="partners__item">
+              <img class="partners__img" src="images/partners/vintage.png">
+            </div>
+            <div class="partners__item">
+              <img class="partners__img" src="images/partners/peterson.png">
+            </div>
+            <div class="partners__item">
+              <img class="partners__img" src="images/partners/kmn.png">
+            </div>
+            <div class="partners__item">
+              <img class="partners__img" src="images/partners/chainforse.png">
+            </div>
+            <div class="partners__item">
+              <img class="partners__img" src="images/partners/next.png">
+            </div>
+            <div class="partners__item">
+              <img class="partners__img" src="images/partners/vintage.png">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    {% include 'app/modul/_footer/_footer.html' %}
+
+    <script src="js/main.min.js"></script>
+  </body>
+
+</html>

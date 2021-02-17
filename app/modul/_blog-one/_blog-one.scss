@@ -1,0 +1,341 @@
+.blog-one {
+  padding: 122px 0;
+  @include rubik-400;
+
+  @include _640 {
+    padding: 50px 0;
+  }
+
+  h3 {
+    @include rubik-500;
+    font-size: 18px;
+    line-height: 1.2;
+    margin: 75px 0 18px 0;
+  }
+
+  p {
+    margin-bottom: 5px;
+
+    &:first-child {
+      @include rubik-500;
+    }
+  }
+
+  &__img {
+    float: left;
+    width: 325px;
+    height: 210px;
+    margin: 0 30px 10px 0;
+    object-fit: cover;
+
+    @include _458 {
+      margin-right: 0;
+      float: none;
+    }
+  }
+
+  blockquote {
+    margin: 35px 0 48px;
+    padding: 18px 90px 15px 35px;
+    border-left: 6px solid $default;
+    background-color: $alice-blue;
+
+    @include _458 {
+      padding-right: 0;
+    }
+  }
+
+  cite {
+    display: block;
+    padding: 5px 0 0 45px;
+    position: relative;
+
+    &::before {
+      @extend %before;
+      width: 20px;
+      height: 3px;
+      background-color: $default;
+      left: 0;
+      top: 50%;
+      transform: translateY(50%);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 130px;
+    margin-bottom: 50px;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+
+    @include _640 {
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      padding: 10px 0;
+    }
+  }
+
+  &__author-img {
+    width: 77px;
+    height: 77px;
+    margin-right: 28px;
+    object-fit: cover;
+  }
+
+  &__author {
+    display: flex;
+
+    @include _640 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 20px;
+    @include rubik-500;
+    color: $dark-charcoal;
+  }
+
+  &__skill {
+    color: #666666;
+  }
+
+  &__social {
+    margin-right: 20px;
+
+    @include _992 {
+      margin-right: 0;
+    }
+  }
+
+  &__social-skill {
+    display: inline-block;
+    color: $dark-charcoal;
+    margin-bottom: 17px;
+  }
+
+  &__share {
+    margin-right: 20px;
+  }
+
+  &__tags {
+    display: inline-block;
+    margin-right: 30px;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 22px;
+
+    @include _992 {
+      margin-right: 5px;
+    }
+  }
+
+  &__social-link {
+    @include effect-icon;
+    @include path;
+
+    @include _992 {
+      padding: 12px 17px;
+    }
+  }
+}
+
+.blog-comment {
+  margin-bottom: 60px;
+
+  &__box {
+    display: flex;
+    margin-top: 30px;
+
+    @include _458 {
+      flex-direction: column;
+    }
+
+    &--retreat {
+      padding-left: 132px;
+
+      @include _640 {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 45px;
+  }
+
+  &__avatar {
+    max-width: 100px;
+    min-height: 100px;
+    object-fit: cover;
+    margin-right: 32px;
+    
+
+    @include _458 {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__inner {
+    padding-bottom: 20px;
+    border-bottom: 1px solid $light-gray;
+  }
+
+  &__person {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+
+  &__name {
+    @include rubik-700;
+    color: $dark-blue;
+  }
+
+  &__data {
+    @include rubik-400;
+    color: #9e9e9e;
+  }
+
+  &__info {
+    @include rubik-400;
+    margin-bottom: 15px;
+    color: $comet;
+  }
+
+  &__link-more {
+    display: inline-block;
+    position: relative;
+    color: $comet;
+    padding-right: 20px;
+    font-size: 14px;
+    @include rubik-400;
+    @include effect;
+
+    @include _992 {
+      padding: 12px 20px 13px 0;
+    }
+
+    &::after {
+      @extend %before;
+      background-image: url('../images/icons/arrow-blog.svg');
+      width: 15px;
+      height: 17px;
+      bottom: 4px;
+      right: 0;
+
+      @include _992 {
+        bottom: 12px;
+      }
+    }
+  }
+}
+
+.sending-form {
+  &__caption {
+    margin-bottom: 32px;
+  }
+
+  &__input-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+
+    @include _640 {
+      flex-direction: column;
+    }
+  }
+
+  &__lable {
+    width: 100%;
+
+    &:last-child {
+      margin-left: 30px;
+
+      @include _640 {
+        margin: 30px 0 0 0;
+      }
+    }
+  }
+
+  &__input {
+    display: inline-block;
+    max-width: 400px;
+    width: 100%;
+    height: 50px;
+    padding: 0 40px 0 20px;
+    @include effect;
+    border: 1px solid #e5e5e5;
+    background-position: 95% 20px;
+    background-repeat: no-repeat;
+
+    @include _640 {
+      max-width: 100%;
+      background-position: 97% 20px;
+    }
+
+    &::placeholder {
+      color: #999999;
+    }
+
+    &--name {
+      background-image: url('../images/icons/form-avatar.svg');
+    }
+
+    &--email {
+      background-image: url('../images/icons/form-email.svg');
+
+      &::placeholder {
+        color: $dark-charcoal;
+      }
+    }
+  }
+
+  &__textarea {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 120px;
+    padding: 14px 40px 20px 20px;
+    margin-bottom: 42px;
+    resize: none;
+    @include effect;
+    border: 1px solid #e5e5e5;
+    background-position: 98% 20px;
+    background-repeat: no-repeat;
+    background-image: url('../images/icons/messenge.svg');
+
+    &::placeholder {
+      color: #999999;
+    }
+  }
+
+  &__btn {
+    display: block;
+    width: 190px;
+    height: 50px;
+    background-color: $default;
+    font-size: 14px;
+    line-height: 1.1;
+    @include rubik-400;
+    @include effect;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}

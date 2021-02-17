@@ -1,0 +1,21 @@
+@import 'fonts';
+@import 'vars';
+@import 'reset';
+@import 'libs';
+@import 'global';
+
+
+@import '../modul/_header/_header';
+
+@import '../modul/_news/_news';
+@import '../modul/_partners/_partners';
+@import '../modul/_product/_product';
+@import '../modul/_footer/_footer';
+
+
+@import 'components/bread-crumbs';
+@import 'components/list-icon';
+@import 'article-card/product-card';
+@import 'article-card/article-card';
+@import 'article-card/article-time';
+@import 'article-card/top-product';
